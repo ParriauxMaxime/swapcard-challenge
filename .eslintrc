@@ -1,0 +1,40 @@
+ {
+   "extends": "airbnb",
+   "rules": {
+     "no-param-reassign": 0,
+     "global-require": 0,
+     "import/no-extraneous-dependencies": [
+       2,
+       {
+         "devDependencies": true
+       }
+     ],
+     "strict": 0,
+     "no-console": 0,
+     "react/no-unused-prop-types": [
+       2,
+       {
+         "skipShapeProps": true
+       }
+     ],
+     "no-underscore-dangle": [
+       2,
+       {
+         "allow": [
+           "__PRELOADED_STATE__"
+         ]
+       }
+     ],
+     "jsx-a11y/anchor-is-valid": [
+       2,
+       {
+         "components": [
+           "Link"
+         ],
+         "specialLink": [
+           "to"
+         ]
+       }
+     ]
+   }
+ }
