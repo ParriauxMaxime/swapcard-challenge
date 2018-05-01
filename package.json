@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "express-react-redux build-client",
-    "start": "node src/server"
+    "start": "node src/server",
+    "fixlint": "eslint src/client --fix"
   },
   "keywords": [
     "React",
@@ -17,6 +18,7 @@
   "author": "Maxime Parriaux",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "eventsource": "^1.0.5",
     "express": "^4.16.3",
     "material-ui": "^1.0.0-beta.43",
@@ -24,13 +26,15 @@
     "node-fetch": "^2.1.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "react-autosuggest": "^9.3.4",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
     "redux-localstorage": "^0.4.1",
     "redux-thunk": "^2.2.0",
-    "spotify-web-api-js": "^0.24.0"
+    "spotify-web-api-js": "^0.24.0",
+    "spotify-web-api-node": "^3.1.1"
   },
   "devDependencies": {
     "eslint": "^4.11.0",

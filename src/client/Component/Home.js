@@ -2,32 +2,58 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { withTheme } from "material-ui/styles";
+import { withStyles } from 'material-ui/styles';
 import { ConnectedBasicOutput } from './BasicOutput';
 import { Appbar } from './Appbar';
 import { spotifyActions } from '../Api/spotify';
+import ArtistSelector from './ArtistSelector';
+import AlbumSelector from './AlbumSelector';
 
-export const Home = ({theme, logout}) => {
-  return (
-    <React.Fragment>
-      <Appbar logout={logout}/>
-      <div style={theme.mixins.margin()}>
+export const Home = ({ classes, logout }) => (
+  <React.Fragment>
+    <Appbar logout={logout} />
+    <div className={classes.root}>
+      <div className={classes.left}>
+        <ArtistSelector />
+      </div>
+      <div className={classes.right}>
+        <AlbumSelector />
         <ConnectedBasicOutput />
       </div>
-    </React.Fragment>
-  );
-};
+    </div>
+  </React.Fragment>
+);
 
 Home.propTypes = {
 };
 
-export const homeState = ({}) => ({});
+const style = theme => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  left: {
+    width: 500,
+    minWidth: 300,
+  },
+  right: {
+    flexShrink: 3,
+    margin: theme.spacing.unit,
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'column',
+  },
+});
 
-export const homeDispatch = dispatch => ({
-  
+const styled = withStyles(style)(Home);
+
+const state = ({}) => ({});
+
+const dispatch = dispatch => ({
+
 });
 
 
+const ConnectedHome = connect(state)(styled);
 
-
-export const ConnectedHome = connect(homeState, spotifyActions)(withTheme()(Home));
+export default ConnectedHome;

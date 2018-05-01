@@ -5,22 +5,23 @@ const green = require('material-ui/colors/green').default;
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: grey[800]
+      main: grey[800],
     },
     secondary: {
-      main: green[600]
-    }
+      main: green[600],
+    },
   },
   mixins: {
-    margin: (unit = 1) => ({
-      margin: theme.spacing.unit * unit
+    margin: (options, unit = 1) => ({
+      margin: theme.spacing.unit * unit,
+      ...options,
     }),
-    full: ({ height = "100%", width = "100%", ...options }) => ({
-      height: height,
-      width: width,
-      ...options
-    })
-  }
+    full: options => ({
+      height: '100%',
+      width: '100%',
+      ...options,
+    }),
+  },
 });
 
-module.exports = {theme};
+module.exports = { theme };

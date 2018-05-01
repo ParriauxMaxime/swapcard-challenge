@@ -128,7 +128,6 @@ function SSR(options = {}) {
         const render = (err) => {
             if (err) return next(err);
             const context = {};
-            console.info('last', store.getState())
             const appHtml = renderToString(
                 h(Provider, { store },
                     h(JssProvider, {registry: sheetsRegistry, generateClassName},
@@ -147,7 +146,7 @@ function SSR(options = {}) {
                 let html = getIndexHtml();
                 const cssString = '<style id="jss-server-side">' + css + '</style>';
                 const appDiv = '<div id="app">';
-                html = html.replace(appDiv, appDiv + appHtml);
+                html = html.replace(appDiv, appDiv + appHtml + cssString);
                 const preloadedState = `<script>window.__PRELOADED_STATE__=${serialize(store.getState())}</script>`;
                 const scriptTag = '<script type';
                 html = html.replace(scriptTag, preloadedState + scriptTag);

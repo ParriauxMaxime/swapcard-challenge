@@ -15,13 +15,19 @@ import reducer from './reducer';
 const store = createStore(reducer, window.__PRELOADED_STATE__);
 
 const render = (Component) => {
-  ReactDOM.hydrate(
-    e(AppContainer, {warnings: false}, 
-      e(Provider, {store},
-        e(MuiThemeProvider, {theme},  
-          e(Router, {}, 
-            e(Component))))
-    ), document.getElementById('app'))
+  ReactDOM.hydrate(e(
+    AppContainer, { warnings: false },
+    e(
+      Provider, { store },
+      e(
+        MuiThemeProvider, { theme },
+        e(
+          Router, {},
+          e(Component),
+        ),
+      ),
+    ),
+  ), document.getElementById('app'));
 };
 
 render(App);

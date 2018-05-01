@@ -5,15 +5,18 @@ import { connect } from "react-redux";
 import { Switch, Route } from 'react-router';
 
 import { About } from "./Component/About";
-import { ConnectedHome } from "./Component/Home";
+import ConnectedHome from "./Component/Home";
 import { Appbar } from './Component/Appbar';
 import { spotifyActions } from './Api/spotify';
+import Spotify from './Api/spotify';
 
 const HelloWorld = () => <div>Hello world</div>;
 
 
 const App = (props) => {
-  console.log(props);
+  if (props.accessToken) {
+    Spotify.setAccessToken(props.accessToken)
+  }
   const {setAccessToken, loginSuccess} = props
   return (
     <div>
