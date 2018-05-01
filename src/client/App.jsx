@@ -10,7 +10,7 @@ import { Appbar } from './Component/Appbar';
 import { spotifyActions } from './Api/spotify';
 import Spotify from './Api/spotify';
 
-const HelloWorld = () => <div>Hello world</div>;
+const HelloWorld = ({match}) => <div>{match.params.id}</div>;
 
 
 const App = (props) => {
@@ -24,7 +24,9 @@ const App = (props) => {
       <Switch>
         <Route path="/about" component={About} />
         <Route path="/home" render={ConnectedHome} />
+        <Route path="/album/:id" render={HelloWorld} />
         <Route exact path="/" component={ConnectedHome} />
+        
         <Route render={() => <Redirect to="/" />} />
       </Switch>
     </div>
