@@ -46,7 +46,7 @@ const searchState = ({ search }) => ({ ...search });
 const searchDispatch = dispatch => ({
   searchInputChanged: (event) => {
     const search = event.target.value;
-    history.pushState({}, '', `?q=${search}`)
+    history.pushState({}, '', `?q=${search}`);
     dispatch({
       type: 'SEARCH_INPUT_CHANGED',
       data: search,

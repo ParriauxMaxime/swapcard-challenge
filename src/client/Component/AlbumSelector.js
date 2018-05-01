@@ -18,13 +18,13 @@ const AlbumSelector = ({
   classes,
 }) => {
   const typeName = {
-        "album": 'Albums',
-        "single": 'Singles',
-        "appears_on": 'Appear on'
-  }
-  const filterByType = type => ({ 
-      type: typeName[type], 
-      albums: albumSearch.filter(e => e.album_group === type) 
+    album: 'Albums',
+    single: 'Singles',
+    appears_on: 'Appear on',
+  };
+  const filterByType = type => ({
+    type: typeName[type],
+    albums: albumSearch.filter(e => e.album_group === type),
   });
   const albums = filterByType('album');
   const singles = filterByType('single');
@@ -39,29 +39,31 @@ const AlbumSelector = ({
         {
             lists.map(list => (
                 list.albums.length > 0 ?
-                    <React.Fragment key={list.type}>
-                        <Divider/>
-                        <ListItem>
-                            <ListItemText primary={list.type}/>
-                        </ListItem>
-                        <ListItem>
-                            <GridList
-                                cellHeight={180}
-                                className={classes.gridList}
-                            >
-                            {
+                  <React.Fragment key={list.type}>
+                    <Divider />
+                    <ListItem>
+                      <ListItemText primary={list.type} />
+                    </ListItem>
+                    <ListItem>
+                      <GridList
+                        cellHeight={180}
+                        className={classes.gridList}
+                      >
+                        {
                                 list.albums.map(album => (
-                                <React.Fragment key={album.id}>
-                                    <Link to={{pathname:"/album/" + album.id}}>
-                                        <Album {...album} 
-                                            onClick={() => albumRedirect(album.id)}/>
+                                  <React.Fragment key={album.id}>
+                                    <Link to={{ pathname: `/album/${album.id}` }}>
+                                      <Album
+                                        {...album}
+                                        onClick={() => albumRedirect(album.id)}
+                                      />
                                     </Link>
-                                </React.Fragment>
+                                  </React.Fragment>
                                     ))
                             }
-                        </GridList>
-                        </ListItem>
-                    </React.Fragment> :
+                      </GridList>
+                    </ListItem>
+                  </React.Fragment> :
                     null
                 ))
         }
@@ -72,9 +74,9 @@ const AlbumSelector = ({
 };
 
 const style = theme => ({
-    list: {
-        width: "100%"
-    },
+  list: {
+    width: '100%',
+  },
   gridList: {
   },
 });
@@ -86,9 +88,9 @@ const state = ({ spotify }) => ({
 });
 
 const dispatch = (dispatch, ownProps) => ({
-    albumRedirect: (id) => {
-        console.log(ownProps)
-    }
+  albumRedirect: (id) => {
+    console.log(ownProps);
+  },
 });
 
 const ConnectedArtistSelector = connect(state, dispatch)(styled);
