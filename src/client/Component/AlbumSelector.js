@@ -5,12 +5,12 @@ import { withStyles } from 'material-ui/styles';
 import { connect } from 'react-redux';
 import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
-import { Link } from 'react-router-dom';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import Subheader from 'material-ui/List/ListSubheader';
 import { spotifyActions, actions } from '../Api/spotify';
 import Artist from './Artist';
 import Album from './Album';
+import { push } from 'react-router-redux';
 
 const AlbumSelector = ({
   albumSearch = [],
@@ -52,12 +52,8 @@ const AlbumSelector = ({
                         {
                                 list.albums.map(album => (
                                   <React.Fragment key={album.id}>
-                                    <Link to={{ pathname: `/album/${album.id}` }}>
-                                      <Album
-                                        {...album}
-                                        onClick={() => albumRedirect(album.id)}
-                                      />
-                                    </Link>
+                                      <Album {...album} 
+                                        onClick={() => albumRedirect(album.id)}/>
                                   </React.Fragment>
                                     ))
                             }
@@ -83,13 +79,13 @@ const style = theme => ({
 
 const styled = withStyles(style)(AlbumSelector);
 
-const state = ({ spotify }) => ({
+const state = ({ spotify, router }) => ({
   albumSearch: spotify.albumSearch,
 });
 
 const dispatch = (dispatch, ownProps) => ({
   albumRedirect: (id) => {
-    console.log(ownProps);
+    dispatch(push('/album/' + id))
   },
 });
 

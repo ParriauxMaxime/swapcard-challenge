@@ -7,19 +7,21 @@ import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
 import { spotifyActions, actions } from '../Api/spotify';
 import Artist from './Artist';
+import { albumSearch } from '../Api/action';
 
 const ArtistSelector = ({
-  artistSearch,
+  artists,
   artistSelected,
   classes,
 }) => {
-  const orderedArtists = [...artistSearch].sort((a, b) => a.popularity < b.popularity);
+  console.info(artists);
+  const orderedArtists = [...artists].sort((a, b) => a.popularity < b.popularity);
   return (
     <List
       subheader={<ListSubheader>Artists</ListSubheader>}
       className={classes.artistist}
     >
-      <Collapse in={artistSearch.length !== 0}>
+      <Collapse in={artists.length !== 0}>
         {
                 orderedArtists.map(artist => (
                   <React.Fragment key={artist.id}>
@@ -52,14 +54,17 @@ const style = theme => ({
 
 const styled = withStyles(style)(ArtistSelector);
 
-const state = ({ spotify }) => ({
-  artistSearch: spotify.artistSearch,
-});
+const state = ({ artist, spotify }) => {
+  console.log(artist, spotify.artistSearch)
+  return ({
+    artists: spotify.artistSearch.map(id => artist.byIds[id]),
+  });
+}
 
 const dispatch = dispatch => ({
   artistSelected: artist => (
     spotifyActions(dispatch).albumSearchRequest(artist.id)
-      .then(res => dispatch(actions.albumSearch(res)))
+      .then(res => dispatch(albumSearch(res)))
       .catch(err => console.warn(err))
   ),
 });

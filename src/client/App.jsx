@@ -9,32 +9,31 @@ import ConnectedHome from "./Component/Home";
 import { Appbar } from './Component/Appbar';
 import { spotifyActions } from './Api/spotify';
 import Spotify from './Api/spotify';
-
-const HelloWorld = ({match}) => <div>{match.params.id}</div>;
-
+import ConnectedAlbumView from './Component/AlbumView';
 
 const App = (props) => {
   if (props.accessToken) {
+    console.log(props.accessToken)
     Spotify.setAccessToken(props.accessToken)
   }
-  const {setAccessToken, loginSuccess} = props
   return (
     <div>
       <CssBaseline />
+      <Appbar />
       <Switch>
         <Route path="/about" component={About} />
-        <Route path="/home" render={ConnectedHome} />
-        <Route path="/album/:id" render={HelloWorld} />
-        <Route exact path="/" component={ConnectedHome} />
-        
+        <Route path="/home" component={ConnectedHome} />
+        <Route path="/album/:id" component={ConnectedAlbumView} />
+        <Route path="/" component={ConnectedHome} />
         <Route render={() => <Redirect to="/" />} />
       </Switch>
     </div>
   )
 };
 
-const appState = ({ spotify }) => ({
-  ...spotify
+const appState = ({ spotify, router }) => ({
+  ...spotify,
+  ...router
 })
 const ConnectedApp = connect(appState, spotifyActions)(App);
 

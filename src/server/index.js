@@ -1,9 +1,11 @@
+
 const express = require('express');
 const app = express();
 const SSR = require('./middleware/SSR');
 const https = require('https');
 const SpotifyApi = require('spotify-web-api-node');
 require('dotenv').config()
+const { addArtists, artistSearch } = require('../client/Api/action');
 
 const spotify = new SpotifyApi({
     clientId: process.env.CLIENT_ID,
@@ -21,12 +23,13 @@ function authenticate(store, req, cb) {
                 data: search
             })
             spotify.searchArtists(search, {limit: 8})
-                .then(res => store.dispatch({
-                    type: 'ARTIST_SEARCH',
-                    data: res.body
-                }))
+                .then((res) => res.body.artists.items)
+                .then(artists => {
+                    store.dispatch(addArtists(artists));
+                    store.dispatch(artistSearch(artists));
+                })
                 .then(() => cb())
-                .catch(err => console.warn(err));
+                .catch(err => cb(err));
         }
         else {
             cb();

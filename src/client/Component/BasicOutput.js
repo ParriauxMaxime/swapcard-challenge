@@ -29,13 +29,7 @@ export const BasicOutput = ({
   </div>
 );
 
-const boState = ({ spotify, search }) => ({
-  ...spotify,
-  search: search.input,
-});
-
-
-const BasicOutputStyle = theme => ({
+const style = theme => ({
   paper: theme.mixins.gutters({
     minHeight: 100,
     maxHeight: 800,
@@ -43,6 +37,14 @@ const BasicOutputStyle = theme => ({
   }),
 });
 
-export const ConnectedBasicOutput = connect(boState, spotifyActions)(withStyles(BasicOutputStyle)(BasicOutput));
+const styled = withStyles(style)(BasicOutput)
+
+const state = ({ spotify, search }) => ({
+  ...spotify,
+  search: search.input,
+});
+
+
+export const ConnectedBasicOutput = connect(state, spotifyActions)(styled);
 
 export default ConnectedBasicOutput;

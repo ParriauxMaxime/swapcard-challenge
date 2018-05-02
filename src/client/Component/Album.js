@@ -22,7 +22,7 @@ export const Album = ({
     artistString;
   const image = images.length > 0 ? images[0] : { url: undefined };
   return (
-    <GridListTile className={classes.root}>
+    <GridListTile className={classes.root} onClick={onClick}>
       <img
         src={image.url}
         alt={`album-${name}`}

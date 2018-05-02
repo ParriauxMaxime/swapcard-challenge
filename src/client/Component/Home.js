@@ -9,9 +9,8 @@ import { spotifyActions } from '../Api/spotify';
 import ArtistSelector from './ArtistSelector';
 import AlbumSelector from './AlbumSelector';
 
-export const Home = ({ classes, logout }) => (
+export const Home = ({ classes }) => (
   <React.Fragment>
-    <Appbar logout={logout} />
     <div className={classes.root}>
       <div className={classes.left}>
         <ArtistSelector />
@@ -47,12 +46,11 @@ const style = theme => ({
 
 const styled = withStyles(style)(Home);
 
-const state = ({}) => ({});
+const state = ({router}) => ({...router});
 
 const dispatch = dispatch => ({
 
 });
-
 
 const ConnectedHome = connect(state)(styled);
 
