@@ -22,6 +22,7 @@
     "eventsource": "^1.0.5",
     "express": "^4.16.3",
     "history": "^4.7.2",
+    "lodash": "^4.17.10",
     "material-ui": "^1.0.0-beta.43",
     "material-ui-icons": "^1.0.0-beta.36",
     "node-fetch": "^2.1.2",

@@ -48,12 +48,12 @@ const searchState = ({ search }) => ({ ...search });
 const searchDispatch = dispatch => ({
   onChange: (event) => {
     const search = event.target.value;
-    dispatch(push('/?q=' + search))
+    dispatch(push(`/?q=${search}`));
     dispatch(searchInputChanged(search));
     if (search !== '') {
       Spotify.searchArtists(search, { limit: 8 })
-        .then((res) => res.artists.items)
-        .then(artists => {
+        .then(res => res.artists.items)
+        .then((artists) => {
           dispatch(addArtists(artists));
           dispatch(artistSearch(artists));
         })
@@ -61,7 +61,7 @@ const searchDispatch = dispatch => ({
           console.warn(err);
         });
     } else {
-      dispatch(artistSearch({ artists: { items: [] } }));
+      dispatch(artistSearch([]));
     }
   },
 });

@@ -1,16 +1,21 @@
 const initialSearchState = {
-    input: '',
-  };
-  
-  const search = (state = initialSearchState, action) => {
-    switch (action.type) {
-      case 'SEARCH_INPUT_CHANGED': {
-        return { ...state, input: action.data };
-      }
-      default: {
-        return state;
-      }
-    }
-  };
+  input: '',
+  albumSelected: '',
+};
 
-  export default search;
+const search = (state = initialSearchState, action) => {
+  const { type, data } = action;
+  switch (type) {
+    case 'SEARCH_INPUT_CHANGED': {
+      return { ...state, input: data };
+    }
+    case 'ALBUM_SELECT': {
+      return { ...state, albumSelected: data };
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
+export default search;

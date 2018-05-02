@@ -7,14 +7,14 @@ import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
 import { spotifyActions, actions } from '../Api/spotify';
 import Artist from './Artist';
-import { albumSearch } from '../Api/action';
+import { albumSearch, addAlbums } from '../Api/action';
+import Spotify from '../Api/spotify';
 
 const ArtistSelector = ({
   artists,
   artistSelected,
   classes,
 }) => {
-  console.info(artists);
   const orderedArtists = [...artists].sort((a, b) => a.popularity < b.popularity);
   return (
     <List
@@ -54,17 +54,25 @@ const style = theme => ({
 
 const styled = withStyles(style)(ArtistSelector);
 
-const state = ({ artist, spotify }) => {
-  console.log(artist, spotify.artistSearch)
-  return ({
-    artists: spotify.artistSearch.map(id => artist.byIds[id]),
-  });
-}
+const state = ({ artist, spotify }) => ({
+  artists: spotify.artistSearch.map(id => artist.byIds[id]),
+});
 
 const dispatch = dispatch => ({
   artistSelected: artist => (
-    spotifyActions(dispatch).albumSearchRequest(artist.id)
-      .then(res => dispatch(albumSearch(res)))
+    Spotify.getArtistAlbums(artist.id, {})
+      .then(res => res.items.reduce((acc, e) => {
+        const exist = acc.findIndex(album => album.name === e.name) !== -1;
+        return exist ? [...acc] : [...acc, e];
+      }, []))
+      .then((albums) => {
+        const ids = albums.map(e => e.id);
+        dispatch(albumSearch(ids));
+        Spotify.getAlbums(ids)
+          .then(res => res.albums)
+          .then(albums => dispatch(addAlbums(albums)))
+          .catch(err => console.warn(err));
+      })
       .catch(err => console.warn(err))
   ),
 });

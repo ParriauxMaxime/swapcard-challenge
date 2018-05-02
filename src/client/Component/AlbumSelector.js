@@ -1,35 +1,37 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+
 import List, { ListItem, ListItemText, ListSubheader } from 'material-ui/List';
 import Paper from 'material-ui/Paper';
 import { withStyles } from 'material-ui/styles';
-import { connect } from 'react-redux';
 import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import Subheader from 'material-ui/List/ListSubheader';
-import { spotifyActions, actions } from '../Api/spotify';
+
 import Artist from './Artist';
 import Album from './Album';
-import { push } from 'react-router-redux';
+import { selectAlbum } from '../Api/action';
 
 const AlbumSelector = ({
-  albumSearch = [],
+  albums = [],
   albumRedirect,
   classes,
 }) => {
   const typeName = {
     album: 'Albums',
     single: 'Singles',
-    appears_on: 'Appear on',
+    compilation: 'Compilations',
   };
   const filterByType = type => ({
     type: typeName[type],
-    albums: albumSearch.filter(e => e.album_group === type),
+    albums: albums.filter(e => e && e.album_type === type),
   });
-  const albums = filterByType('album');
+  const album = filterByType('album');
   const singles = filterByType('single');
-  const appearsOn = filterByType('appears_on');
-  const lists = [albums, singles, appearsOn];
+  const compilation = filterByType('compilation');
+  const lists = [album, singles, compilation];
   return (
     <React.Fragment>
       <List className={classes.list}>
@@ -52,8 +54,10 @@ const AlbumSelector = ({
                         {
                                 list.albums.map(album => (
                                   <React.Fragment key={album.id}>
-                                      <Album {...album} 
-                                        onClick={() => albumRedirect(album.id)}/>
+                                    <Album
+                                      {...album}
+                                      onClick={() => albumRedirect(album.id)}
+                                    />
                                   </React.Fragment>
                                     ))
                             }
@@ -63,7 +67,6 @@ const AlbumSelector = ({
                     null
                 ))
         }
-
       </List>
     </React.Fragment>
   );
@@ -79,13 +82,14 @@ const style = theme => ({
 
 const styled = withStyles(style)(AlbumSelector);
 
-const state = ({ spotify, router }) => ({
-  albumSearch: spotify.albumSearch,
+const state = ({ album, spotify, router }) => ({
+  albums: spotify.albumSearch.map(id => album.byIds[id]),
 });
 
 const dispatch = (dispatch, ownProps) => ({
   albumRedirect: (id) => {
-    dispatch(push('/album/' + id))
+    dispatch(selectAlbum(id));
+    dispatch(push(`/album/${id}`));
   },
 });
 

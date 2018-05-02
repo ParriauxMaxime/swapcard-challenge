@@ -37,7 +37,7 @@ const style = theme => ({
   }),
 });
 
-const styled = withStyles(style)(BasicOutput)
+const styled = withStyles(style)(BasicOutput);
 
 const state = ({ spotify, search }) => ({
   ...spotify,

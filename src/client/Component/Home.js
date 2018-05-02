@@ -46,7 +46,7 @@ const style = theme => ({
 
 const styled = withStyles(style)(Home);
 
-const state = ({router}) => ({...router});
+const state = ({ router }) => ({ ...router });
 
 const dispatch = dispatch => ({
 
