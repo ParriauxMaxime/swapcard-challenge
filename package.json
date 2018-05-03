@@ -7,6 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "express-react-redux build-client",
     "start": "node src/server",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "fixlint": "eslint src/client --fix"
   },
   "keywords": [
@@ -42,6 +44,7 @@
     "eslint-plugin-react": "^7.5.1",
     "express-react-redux": "^0.5.2",
     "flow": "^0.2.3",
+    "jest": "^22.4.3",
     "npm": "^6.0.0",
     "react-hot-loader": "3.0.0-beta.7"
   }

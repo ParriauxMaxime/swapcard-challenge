@@ -1,4 +1,4 @@
-import _ from 'lodash';
+const _ = require('lodash');
 
 const initialState = {
   byIds: {
@@ -15,6 +15,11 @@ const addArtists = (state, artists) => {
     })
     .filter(e => e)
     .reduce((acc, e) => ({ ...acc, ...e }), {});
+    /*console.info(JSON.stringify({
+      ...state,
+      byIds: _.merge(state.byIds, newArtists),
+      allIds: _.uniq([...state.allIds, ...Object.keys(newArtists)])      
+    }))*/
   return {
     ...state,
     byIds: _.merge(state.byIds, newArtists),
@@ -31,4 +36,6 @@ const artist = (state = initialState, action) => {
   }
 };
 
-export default artist;
+module.exports = { 
+  default: artist
+}
