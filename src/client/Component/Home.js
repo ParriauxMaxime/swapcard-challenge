@@ -28,12 +28,12 @@ Home.propTypes = {
 
 const style = theme => ({
   root: {
-    height: "100%"
+    height: '100%',
   },
   left: {
     [theme.breakpoints.up('sm')]: {
       minWidth: 400,
-    }
+    },
   },
   right: {
   },

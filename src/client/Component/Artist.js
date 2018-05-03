@@ -12,15 +12,13 @@ export const Artist = (props) => {
     images,
     genres,
   } = props;
-  const genreString = genres ? genres.join(', ') : "";
+  const genreString = genres ? genres.join(', ') : '';
   const genre = genreString.length > 50 ?
     `${genreString.slice(0, 47)}...` :
     genreString;
-  const selectResolution = (aboveHeight) => {
-    return images ?
+  const selectResolution = aboveHeight => (images ?
     [...images.filter(e => e.height > aboveHeight)].reverse()[0] :
-    {url: ''}
-  };
+    { url: '' });
   const image = selectResolution(100);
   return (
     <div className={classes.root}>

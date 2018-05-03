@@ -57,11 +57,11 @@ const AlbumSelector = ({
                         {
                                 list.albums.map(album => (
                                   <React.Fragment key={album.id}>
-                                  <NavLink to={"/album/" + album.id}>
-                                    <Album
-                                      {...album}
-                                      onClick={() => albumRedirect(album)}
-                                    />
+                                    <NavLink to={`/album/${album.id}`}>
+                                      <Album
+                                        {...album}
+                                        onClick={() => albumRedirect(album)}
+                                      />
                                     </NavLink>
                                   </React.Fragment>
                                     ))
@@ -80,8 +80,8 @@ const AlbumSelector = ({
 const style = theme => ({
   list: {
     width: '100%',
-    height: "100%",
-    overflowY: 'auto'
+    maxHeight: '100%',
+    overflowY: 'auto',
   },
 });
 
@@ -97,7 +97,7 @@ const dispatch = (dispatch, ownProps) => ({
     Spotify.getAlbumTracks(album.id)
       .then(res => res.items)
       .then(tracks => dispatch(addTracks(tracks)))
-      .catch(err => console.warn(err))      
+      .catch(err => console.warn(err));
     dispatch(push(`/album/${album.id}`));
   },
 });

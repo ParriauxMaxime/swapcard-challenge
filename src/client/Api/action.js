@@ -25,5 +25,5 @@ module.exports = {
   addArtists,
   addAlbums,
   addTracks,
-  selectArtist
+  selectArtist,
 };

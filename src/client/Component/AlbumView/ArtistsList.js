@@ -8,8 +8,10 @@ const ArtistList = ({ artists, onClick }) => (
   <div>
     {
                 artists.map((artist, index) => (
-                  <Button onClick={() => onClick(artist)} 
-                        key={artist.id}>
+                  <Button
+                    onClick={() => onClick(artist)}
+                    key={artist.id}
+                  >
                     <Typography variant="caption">
                       { artist.name }
                       { index === artists.length - 1 ? '' : ', '}
