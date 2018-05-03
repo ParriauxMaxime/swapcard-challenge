@@ -5,10 +5,9 @@ import { withStyles } from 'material-ui/styles';
 import { connect } from 'react-redux';
 import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
-import { spotifyActions, actions } from '../Api/spotify';
 import Artist from './Artist';
-import { albumSearch, addAlbums, selectArtist } from '../Api/action';
-import Spotify from '../Api/spotify';
+import { albumSearch, addAlbums, selectArtist } from '../../../Api/action';
+import Spotify from '../../../Api/spotify';
 import { push } from 'react-router-redux';
 import Searchbar from './Searchbar';
 

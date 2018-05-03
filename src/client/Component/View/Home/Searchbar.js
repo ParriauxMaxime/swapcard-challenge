@@ -4,10 +4,9 @@ import { InputAdornment } from 'material-ui/Input';
 import SearchIcon from 'material-ui-icons/Search';
 import { withStyles } from 'material-ui/styles';
 import { connect } from 'react-redux';
-import Spotify from '../Api/spotify';
-import { spotifyActions } from '../Api/spotify';
 import { push } from 'react-router-redux';
-import { searchInputChanged, addArtists, artistSearch } from '../Api/action';
+import Spotify from '../../../Api/spotify';
+import { searchInputChanged, addArtists, artistSearch } from '../../../Api/action';
 
 
 export const Searchbar = ({

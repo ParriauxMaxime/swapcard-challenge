@@ -10,7 +10,7 @@ import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import MoreIcon from 'material-ui-icons/MoreHoriz';
 
-import Spotify from '../../Api/spotify';
+import Spotify from '../../../Api/spotify';
 
 const TracksList = ({
   tracks,

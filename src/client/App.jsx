@@ -4,9 +4,6 @@ import CssBaseline from 'material-ui/CssBaseline';
 import { connect } from "react-redux";
 import { Switch, Route } from 'react-router';
 
-import { About } from "./Component/About";
-import ConnectedHome from "./Component/Home";
-import { Appbar } from './Component/Appbar';
 import {
   addTracks,
   selectAlbum,
@@ -17,9 +14,11 @@ import {
   artistSearch, 
   searchInputChanged
 } from './Api/action';
-import { spotifyActions } from './Api/spotify';
+import { About } from "./Component/About";
+import { Appbar } from './Component/Appbar';
 import Spotify from './Api/spotify';
-import ConnectedAlbumView from './Component/AlbumView';
+import ConnectedHome from "./Component/View/Home";
+import ConnectedAlbumView from './Component/View/Album';
 
 const App = (props) => {
   if (props.accessToken) {

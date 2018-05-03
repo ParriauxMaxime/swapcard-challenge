@@ -13,8 +13,8 @@ import Subheader from 'material-ui/List/ListSubheader';
 
 import Artist from './Artist';
 import Album from './Album';
-import { selectAlbum, addTracks } from '../Api/action';
-import Spotify from '../Api/spotify';
+import { selectAlbum, addTracks } from '../../../Api/action';
+import Spotify from '../../../Api/spotify';
 
 
 const AlbumSelector = ({
