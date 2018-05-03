@@ -8,10 +8,13 @@ require('dotenv').config()
 const { 
     addArtists, 
     addAlbums,
+    addTracks,
     artistSearch, 
     searchInputChanged,
     selectAlbum,
-    setAccessToken
+    albumSearch,
+    setAccessToken,
+    selectArtist
 } = require('../client/Api/action');
 
 const spotify = new SpotifyApi({
@@ -23,17 +26,36 @@ let expireAt = 0;
 
 function authenticate(store, req, cb) {
     function onArtistSearch() {
-        if (req.path === '/' && req.query.q) {
+        let promises = [];
+        if (req.query.q) {
             const search = req.query.q;
             store.dispatch(searchInputChanged(search))
-            return spotify.searchArtists(search, {limit: 8})
+            promises.push(spotify.searchArtists(search, {limit: 8})
                 .then((res) => res.body.artists.items)
                 .then(artists => {
                     store.dispatch(addArtists(artists));
                     store.dispatch(artistSearch(artists));
-                })
+                }));
         }
-        return Promise.resolve()
+        if (req.query.id) {
+            const id = req.query.id
+            store.dispatch(selectArtist(id))
+            promises.push(
+                spotify.getArtistAlbums(id)
+                    .then(res => res.body.items.reduce((acc, e) => {
+                        const exist = acc.findIndex(album => album.name === e.name) !== -1;
+                        return exist ? [...acc] : [...acc, e];
+                    }, []))
+                    .then((albums) => {
+                        const ids = albums.map(e => e.id);
+                        store.dispatch(addAlbums(albums))                
+                        store.dispatch(albumSearch(ids));
+                    })
+                )
+            }
+        //Too lazy to refactor this
+        return Promise.all(promises)
+            .then(_ => null);
     };
     function onAlbumSearch() {
         const params = req.url.split('/').slice(1);
@@ -47,6 +69,12 @@ function authenticate(store, req, cb) {
                 .then((album) => {
                     store.dispatch(addAlbums([album]))
                     store.dispatch(addArtists(album.artists))
+                    return album.tracks.items
+                })
+                .then(tracks => {
+                    return spotify.getTracks(tracks.map(track => track.id))
+                        .then(res => res.body.tracks)    
+                        .then(tracks => store.dispatch(addTracks(tracks)))
                 })
         }
         return Promise.resolve()

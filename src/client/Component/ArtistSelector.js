@@ -7,32 +7,47 @@ import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
 import { spotifyActions, actions } from '../Api/spotify';
 import Artist from './Artist';
-import { albumSearch, addAlbums } from '../Api/action';
+import { albumSearch, addAlbums, selectArtist } from '../Api/action';
 import Spotify from '../Api/spotify';
+import { push } from 'react-router-redux';
 
 const ArtistSelector = ({
   artists,
   artistSelected,
+  artistSelect,
   classes,
 }) => {
-  const orderedArtists = [...artists].sort((a, b) => a.popularity < b.popularity);
+  const orderedArtists = [
+    ...artists.filter(e => e.id !== (artistSelected ? artistSelected.id : ""))
+  ].sort((a, b) => a.popularity < b.popularity);
   return (
     <List
-      subheader={<ListSubheader>Artists</ListSubheader>}
-      className={classes.artistist}
-    >
+      subheader={<ListSubheader style={{position: "relative"}}>
+                  Artists
+                </ListSubheader>}
+      className={classes.artistList}>
+    {
+      artistSelected ?
+        <ListItem
+            className={classes.listItem + " " + classes.selected}>
+            <Artist {...artistSelected} />  
+        </ListItem> :
+        null
+    }
       <Collapse in={artists.length !== 0}>
         {
-                orderedArtists.map(artist => (
-                  <React.Fragment key={artist.id}>
-                    <ListItem
-                      className={classes.listItem}
-                      onClick={() => artistSelected(artist)}
-                    >
-                      <Artist {...artist} />
-                    </ListItem>
-                  </React.Fragment>
-                    ))
+                orderedArtists.map(artist => {
+                  return (
+                    <React.Fragment key={artist.id}>
+                      <ListItem
+                        className={classes.listItem}
+                        onClick={() => artistSelect(artist)}
+                      >
+                        <Artist {...artist} />
+                      </ListItem>
+                    </React.Fragment>
+                  );
+                })
         }
       </Collapse>
     </List>
@@ -42,7 +57,7 @@ const ArtistSelector = ({
 const style = theme => ({
   artistList: {
     overflowY: 'auto',
-    maxHeight: 900,
+    height: "100%"
   },
   listItem: {
     '&:hover': {
@@ -50,31 +65,22 @@ const style = theme => ({
       transition: '0.2s',
     },
   },
+  selected: {
+    backgroundColor: 'rgba(0, 0, 0, 0.32)',
+  }
 });
 
 const styled = withStyles(style)(ArtistSelector);
 
-const state = ({ artist, spotify }) => ({
+const state = ({ artist, spotify, search }) => ({
   artists: spotify.artistSearch.map(id => artist.byIds[id]),
+  artistSelected: artist.byIds[search.artistSelected]
 });
 
 const dispatch = dispatch => ({
-  artistSelected: artist => (
-    Spotify.getArtistAlbums(artist.id, {})
-      .then(res => res.items.reduce((acc, e) => {
-        const exist = acc.findIndex(album => album.name === e.name) !== -1;
-        return exist ? [...acc] : [...acc, e];
-      }, []))
-      .then((albums) => {
-        const ids = albums.map(e => e.id);
-        dispatch(albumSearch(ids));
-        Spotify.getAlbums(ids)
-          .then(res => res.albums)
-          .then(albums => dispatch(addAlbums(albums)))
-          .catch(err => console.warn(err));
-      })
-      .catch(err => console.warn(err))
-  ),
+  artistSelect: artist => {
+    dispatch(push('/?q=' + artist.name + '&id=' + artist.id))   
+  }
 });
 
 const ConnectedArtistSelector = connect(state, dispatch)(styled);

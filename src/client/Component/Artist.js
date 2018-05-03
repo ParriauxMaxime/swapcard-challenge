@@ -3,21 +3,23 @@ import { ListItemText } from 'material-ui/List';
 import Paper from 'material-ui/Paper';
 import { withStyles } from 'material-ui/styles';
 
-export const Artist = ({
-  classes,
-  id,
-  name,
-  popularity,
-  images,
-  genres,
-}) => {
-  const genreString = genres.join(', ');
+export const Artist = (props) => {
+  const {
+    classes,
+    id,
+    name,
+    popularity,
+    images,
+    genres,
+  } = props;
+  const genreString = genres ? genres.join(', ') : "";
   const genre = genreString.length > 50 ?
     `${genreString.slice(0, 47)}...` :
     genreString;
   const selectResolution = (aboveHeight) => {
-    images.filter(e => e.height > aboveHeight);
-    return [...images].reverse()[0];
+    return images ?
+    [...images.filter(e => e.height > aboveHeight)].reverse()[0] :
+    {url: ''}
   };
   const image = selectResolution(100);
   return (
@@ -46,7 +48,9 @@ const ArtistStyle = theme => ({
     width: '100%',
   },
   imgContainer: {
+    minHeight: 100,
     height: 100,
+    minWidth: 100,
     width: 100,
     margin: 'auto',
     backgroundColor: theme.palette.primary.light,

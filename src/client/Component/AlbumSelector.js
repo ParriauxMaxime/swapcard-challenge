@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import { NavLink } from 'react-router-dom';
 
 import List, { ListItem, ListItemText, ListSubheader } from 'material-ui/List';
 import Paper from 'material-ui/Paper';
@@ -12,7 +13,9 @@ import Subheader from 'material-ui/List/ListSubheader';
 
 import Artist from './Artist';
 import Album from './Album';
-import { selectAlbum } from '../Api/action';
+import { selectAlbum, addTracks } from '../Api/action';
+import Spotify from '../Api/spotify';
+
 
 const AlbumSelector = ({
   albums = [],
@@ -36,7 +39,7 @@ const AlbumSelector = ({
     <React.Fragment>
       <List className={classes.list}>
         <ListItem>
-          <ListItemText primary="albums" />
+          <ListItemText primary="Albums" />
         </ListItem>
         {
             lists.map(list => (
@@ -54,10 +57,12 @@ const AlbumSelector = ({
                         {
                                 list.albums.map(album => (
                                   <React.Fragment key={album.id}>
+                                  <NavLink to={"/album/" + album.id}>
                                     <Album
                                       {...album}
-                                      onClick={() => albumRedirect(album.id)}
+                                      onClick={() => albumRedirect(album)}
                                     />
+                                    </NavLink>
                                   </React.Fragment>
                                     ))
                             }
@@ -75,8 +80,8 @@ const AlbumSelector = ({
 const style = theme => ({
   list: {
     width: '100%',
-  },
-  gridList: {
+    height: "100%",
+    overflowY: 'auto'
   },
 });
 
@@ -87,9 +92,13 @@ const state = ({ album, spotify, router }) => ({
 });
 
 const dispatch = (dispatch, ownProps) => ({
-  albumRedirect: (id) => {
-    dispatch(selectAlbum(id));
-    dispatch(push(`/album/${id}`));
+  albumRedirect: (album) => {
+    dispatch(selectAlbum(album.id));
+    Spotify.getAlbumTracks(album.id)
+      .then(res => res.items)
+      .then(tracks => dispatch(addTracks(tracks)))
+      .catch(err => console.warn(err))      
+    dispatch(push(`/album/${album.id}`));
   },
 });
 

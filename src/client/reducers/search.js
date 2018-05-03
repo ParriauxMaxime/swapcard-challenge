@@ -1,6 +1,7 @@
 const initialSearchState = {
   input: '',
-  albumSelected: '',
+  albumSelected: null,
+  artistSelected: null,
 };
 
 const search = (state = initialSearchState, action) => {
@@ -11,6 +12,9 @@ const search = (state = initialSearchState, action) => {
     }
     case 'ALBUM_SELECT': {
       return { ...state, albumSelected: data };
+    }
+    case 'ARTIST_SELECT': {
+      return { ...state, artistSelected: data };
     }
     default: {
       return state;

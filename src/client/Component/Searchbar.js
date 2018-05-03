@@ -13,12 +13,13 @@ import { searchInputChanged, addArtists, artistSearch } from '../Api/action';
 export const Searchbar = ({
   classes,
   input = '',
+  artistSelected = null,
   onChange = () => null,
 }) => (
   <TextField
     value={input}
     placeholder="Search..."
-    onChange={onChange}
+    onChange={(e) => onChange(e, artistSelected)}
     margin="normal"
     className={classes.searchField}
     InputProps={{
@@ -46,9 +47,9 @@ const style = theme => ({
 
 const searchState = ({ search }) => ({ ...search });
 const searchDispatch = dispatch => ({
-  onChange: (event) => {
+  onChange: (event, selectedId = null) => {
     const search = event.target.value;
-    dispatch(push(`/?q=${search}`));
+    dispatch(push(`/?q=${search}` + (selectedId ? `&id=${selectedId}` : "")));
     dispatch(searchInputChanged(search));
     if (search !== '') {
       Spotify.searchArtists(search, { limit: 8 })

@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import { ConnectedBasicOutput } from './BasicOutput';
+import Grid from 'material-ui/Grid';
+
 import { Appbar } from './Appbar';
 import { spotifyActions } from '../Api/spotify';
 import ArtistSelector from './ArtistSelector';
@@ -11,15 +12,14 @@ import AlbumSelector from './AlbumSelector';
 
 export const Home = ({ classes }) => (
   <React.Fragment>
-    <div className={classes.root}>
-      <div className={classes.left}>
+    <Grid container spacing={0} className={classes.root}>
+      <Grid item xs={12} sm={4} className={classes.left}>
         <ArtistSelector />
-      </div>
-      <div className={classes.right}>
+      </Grid>
+      <Grid item xs={12} sm={8} className={classes.right}>
         <AlbumSelector />
-        <ConnectedBasicOutput />
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   </React.Fragment>
 );
 
@@ -28,19 +28,14 @@ Home.propTypes = {
 
 const style = theme => ({
   root: {
-    display: 'flex',
-    flexDirection: 'row',
+    height: "100%"
   },
   left: {
-    width: 500,
-    minWidth: 300,
+    [theme.breakpoints.up('sm')]: {
+      minWidth: 400,
+    }
   },
   right: {
-    flexShrink: 3,
-    margin: theme.spacing.unit,
-    display: 'flex',
-    width: '100%',
-    flexDirection: 'column',
   },
 });
 

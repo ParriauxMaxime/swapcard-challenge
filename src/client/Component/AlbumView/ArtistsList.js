@@ -2,18 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
-import { Link } from 'react-router-dom';
+import Button from 'material-ui/Button';
 
-const ArtistList = ({ artists }) => (
+const ArtistList = ({ artists, onClick }) => (
   <div>
     {
                 artists.map((artist, index) => (
-                  <Link to="" key={artist.id}>
+                  <Button onClick={() => onClick(artist)} 
+                        key={artist.id}>
                     <Typography variant="caption">
                       { artist.name }
                       { index === artists.length - 1 ? '' : ', '}
                     </Typography>
-                  </Link>
+                  </Button>
                     ))
                 }
   </div>

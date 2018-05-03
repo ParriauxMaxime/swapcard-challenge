@@ -12,7 +12,9 @@ const albumSearch = data => Action('ALBUM_SEARCH', data);
 const searchInputChanged = search => Action('SEARCH_INPUT_CHANGED', search);
 const addArtists = data => Action('ADD_ARTISTS', data);
 const addAlbums = data => Action('ADD_ALBUMS', data);
+const addTracks = data => Action('ADD_TRACKS', data);
 const selectAlbum = data => Action('ALBUM_SELECT', data);
+const selectArtist = data => Action('ARTIST_SELECT', data);
 
 module.exports = {
   setAccessToken,
@@ -22,4 +24,6 @@ module.exports = {
   searchInputChanged,
   addArtists,
   addAlbums,
+  addTracks,
+  selectArtist
 };
