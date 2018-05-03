@@ -82,6 +82,7 @@ const style = theme => ({
   },
   goBack: {
     position: 'relative',
+    marginRight: 'auto'
   },
   right: {
     [theme.breakpoints.up('sm')]: {
@@ -112,6 +113,7 @@ const style = theme => ({
       minHeight: 200,
       maxHeight: 200,
     },
+    padding: theme.spacing.unit,
     maxHeight: 400,
     maxWidth: 400,
   },

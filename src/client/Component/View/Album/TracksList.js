@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
+
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Paper from 'material-ui/Paper';
@@ -11,76 +13,34 @@ import Divider from 'material-ui/Divider';
 import MoreIcon from 'material-ui-icons/MoreHoriz';
 
 import Spotify from '../../../Api/spotify';
+import Disk, { DiskHeader } from './Disk';
 
 const TracksList = ({
   tracks,
   initLoad,
   album,
+  disks,
   classes,
-}) => (
-  <List disablePadding className={classes.root}>
-    <ListItem>
-      <Grid container spacing={0}>
-        <Grid item xs={1}>
-          <Typography variant="title">
-                        #
-          </Typography>
-        </Grid>
-        <Grid item xs={8}>
-          <Typography variant="title">
-                            Name
-          </Typography>
-        </Grid>
-      </Grid>
-    </ListItem>
-    <Divider />
-    {
-            tracks.filter(e => e).map((track, index) => {
-                const minutes = new String(Math.floor((track.duration_ms / 1000) / 60)).padStart(2, '0');
-                const seconds = new String(Math.round((track.duration_ms / 1000) % 60)).padStart(2, '0');
-                return (
-                  <React.Fragment key={track.id}>
-                    <ListItem>
-                      <Grid container spacing={0}>
-                        <Grid item xs={1}>
-                          <Typography variant="subheading">
-                            {track.track_number}
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={8}>
-                          <Typography variant="subheading">
-                            { track.name }
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={2}>
-                          <Typography variant="subheading">
-                            { minutes } : { seconds }
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={1}>
-                          <a
-                            className={classes.moreLink}
-                            href={track.external_urls.spotify}
-                          >
-                            <MoreIcon />
-                          </a>
-                        </Grid>
-                      </Grid>
-                    </ListItem>
-                    <Divider />
-                  </React.Fragment>
-                );
-            })
-        }
-  </List>
-);
+}) => { 
+  return (
+    <List disablePadding className={classes.root}>
+      {
+        disks.tracks.map(disk => {
+          return (
+            <React.Fragment key={disk[0].id + disk[0].disc_number}>
+              <DiskHeader number={disk[0].disc_number}/>
+              <Disk tracks={disk} classes={classes}/>
+            </React.Fragment>
+          );
+        })
+      }
+    </List>
+  );
+}
 
 const style = theme => ({
   root: {
-    // listStyle: "none"
-  },
-  moreLink: {
-    color: 'black',
+    flex: 1
   },
 });
 
@@ -98,6 +58,21 @@ const state = ({ track, album, search }) => {
   return ({
     tracks: sortedByTrackNumber(),
     album: album.byIds[search.albumSelected],
+    disks: {
+      number: _.uniq(album.byIds[search.albumSelected].tracks.items
+                  .map(t => t.disc_number)).length,
+      tracks: album.byIds[search.albumSelected].tracks.items.reduce(
+        (acc, e) => {
+          const index = e.disc_number;
+          return acc.length < (index) ? 
+            [...acc, [e]] : 
+            [
+              ...acc.slice(0, index - 1),
+              [...acc[index - 1], e], 
+              ...acc.slice(index, acc.length), 
+            ]
+        }, [])
+    }
   });
 };
 

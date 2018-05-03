@@ -37,10 +37,12 @@ const AlbumSelector = ({
   const lists = [album, singles, compilation];
   return (
     <React.Fragment>
-      <List className={classes.list}>
-        <ListItem>
-          <ListItemText primary="Albums" />
-        </ListItem>
+      <List className={classes.list}
+            subheader={
+              <ListSubheader style={{ position: 'relative' }}>
+                Albums
+              </ListSubheader>
+            }>
         {
             lists.map(list => (
                 list.albums.length > 0 ?
