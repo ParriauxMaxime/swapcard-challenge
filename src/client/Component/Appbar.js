@@ -8,7 +8,7 @@ import { withRouter } from 'react-router';
 export const Appbar = withRouter(({ logout }) => (
   <AppBar position="static" color="primary">
     <Toolbar>
-      <h1>Hello world</h1>
+      <h1>Spotify fetcher</h1>
     </Toolbar>
   </AppBar>
 ));
