@@ -1,10 +1,20 @@
+// @flow
+
+import type { action } from '../types';
+
+export type SearchState = {
+  input: string,
+  albumSelected: string | null,
+  artistSelected: string | null
+}
+
 const initialSearchState = {
   input: '',
   albumSelected: null,
   artistSelected: null,
 };
 
-const search = (state = initialSearchState, action) => {
+const search = (state : SearchState = initialSearchState, action: action) => {
   const { type, data } = action;
   switch (type) {
     case 'SEARCH_INPUT_CHANGED': {

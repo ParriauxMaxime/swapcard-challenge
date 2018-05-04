@@ -1,7 +1,7 @@
 [ignore]
-
+.*/test.*
 [include]
-
+.*/client/.*
 [libs]
 
 [lints]

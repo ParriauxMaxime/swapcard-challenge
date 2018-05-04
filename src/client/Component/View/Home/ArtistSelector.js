@@ -1,3 +1,5 @@
+//@ flow
+
 import React from 'react';
 import List, { ListItem, ListSubheader } from 'material-ui/List';
 import { withStyles } from 'material-ui/styles';
@@ -8,12 +10,21 @@ import { push } from 'react-router-redux';
 import Artist from './Artist';
 import Searchbar from './Searchbar';
 
+import type { ArtistType, ArtistList } from '../../../reducers/artist';
+import type { store, styles } from '../../../types';
+
+opaque type ArtistSelectorProps = {
+  artists: ArtistList,
+  artistSelected: ArtistType,
+  artistSelect: (artist: ArtistType) => any
+} & styles;
+
 const ArtistSelector = ({
   artists,
   artistSelected,
   artistSelect,
   classes,
-}) => {
+}: ArtistSelectorProps) => {
   const orderedArtists = [
     ...artists.filter(e => e.id !== (artistSelected ? artistSelected.id : '')),
   ].sort((a, b) => a.popularity < b.popularity);
@@ -73,7 +84,7 @@ const style = theme => ({
 
 const styled = withStyles(style)(ArtistSelector);
 
-const state = ({ artist, spotify, search }) => ({
+const state = ({ artist, spotify, search }: store) => ({
   artists: spotify.artistSearch.map(id => artist.byIds[id]),
   artistSelected: artist.byIds[search.artistSelected],
 });

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 
-import { Appbar } from '../../Appbar';
 import ArtistSelector from './ArtistSelector';
 import AlbumSelector from './AlbumSelector';
 

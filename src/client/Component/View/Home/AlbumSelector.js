@@ -1,4 +1,6 @@
-import React from 'react';
+// @flow
+
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { NavLink } from 'react-router-dom';
@@ -12,28 +14,38 @@ import Artist from './Artist';
 import Album from './Album';
 import { selectAlbum, addTracks } from '../../../Api/action';
 import Spotify from '../../../Api/spotify';
+import type { styles } from '../../../types';
+import type { AlbumType, AlbumState } from '../../../reducers/album';
 
+opaque type AlbumList = Array<AlbumType>;
+
+type AlbumSelectorProps = {
+  albums: AlbumList,
+  albumRedirect: (album: AlbumType) => any,
+} & styles;
+
+const typeName = {
+  album: 'Albums',
+  single: 'Singles',
+  compilation: 'Compilations'
+};
+
+const filterByType = (albums: AlbumList, type: string) => ({
+  type: typeName[type],
+  albums: albums.filter(e => e && e.album_type === type),
+});
 
 const AlbumSelector = ({
   albums = [],
   albumRedirect,
   classes,
-}) => {
-  const typeName = {
-    album: 'Albums',
-    single: 'Singles',
-    compilation: 'Compilations',
-  };
-  const filterByType = type => ({
-    type: typeName[type],
-    albums: albums.filter(e => e && e.album_type === type),
-  });
-  const albumType = filterByType('album');
-  const singles = filterByType('single');
-  const compilation = filterByType('compilation');
+}: AlbumSelectorProps) => {
+  const albumType = filterByType(albums, 'album');
+  const singles = filterByType(albums, 'single');
+  const compilation = filterByType(albums, 'compilation');
   const lists = [albumType, singles, compilation];
   return (
-    <React.Fragment>
+    <Fragment>
       <List
         className={classes.list}
         subheader={
@@ -45,7 +57,7 @@ const AlbumSelector = ({
         {
             lists.map(list => (
                 list.albums.length > 0 ?
-                  <React.Fragment key={list.type}>
+                  <Fragment key={list.type}>
                     <Divider />
                     <ListItem>
                       <ListItemText primary={list.type} />
@@ -57,24 +69,24 @@ const AlbumSelector = ({
                       >
                         {
                                 list.albums.map(album => (
-                                  <React.Fragment key={album.id}>
+                                  <Fragment key={album.id}>
                                     <NavLink to={`/album/${album.id}`}>
                                       <Album
                                         {...album}
                                         onClick={() => albumRedirect(album)}
                                       />
                                     </NavLink>
-                                  </React.Fragment>
+                                  </Fragment>
                                     ))
                             }
                       </GridList>
                     </ListItem>
-                  </React.Fragment> :
+                  </Fragment> :
                     null
                 ))
         }
       </List>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
@@ -88,7 +100,10 @@ const style = theme => ({
 
 const styled = withStyles(style)(AlbumSelector);
 
-const state = ({ album, spotify }) => ({
+opaque type reducer = {album: AlbumState, spotify: any};
+opaque type stateT = {albums: AlbumList};
+
+const state = ({ album, spotify }: reducer): stateT => ({
   albums: spotify.albumSearch.map(id => album.byIds[id]),
 });
 

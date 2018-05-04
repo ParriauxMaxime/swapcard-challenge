@@ -1,4 +1,15 @@
+// @flow
+
 import _ from 'lodash';
+import type { NormalizedStore } from '../types';
+import type { action } from '../types';
+
+export type TrackType = {
+  id: string,
+  name: string
+}
+
+export type TrackState = NormalizedStore<TrackType>
 
 const initialState = {
   byIds: {
@@ -19,7 +30,7 @@ const addTracks = (state, tracks) => {
   };
 };
 
-const track = (state = initialState, action) => {
+const track = (state: TrackState = initialState, action: action) => {
   const { type, data } = action;
   switch (type) {
     case 'ADD_TRACK': return addTracks(state, [data]);

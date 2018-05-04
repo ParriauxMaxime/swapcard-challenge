@@ -1,13 +1,27 @@
+//@ flow
 const _ = require('lodash');
+import type { NormalizedStore, action, image, external_urls as urls } from '../types';
 
-const initialState = {
+export type ArtistType = {
+  name: string,
+  id: string,
+  genres: string,
+  external_urls: urls,
+  images: Array<image>
+};
+
+export type ArtistList = Array<ArtistType>;
+
+export type ArtistState = NormalizedStore<ArtistType>;
+
+const initialState: ArtistState = {
   byIds: {
 
   },
   allIds: [],
 };
 
-const addArtists = (state, artists) => {
+const addArtists = (state : ArtistState, artists: ArtistList): ArtistState => {
   const newArtists = artists
     .map((artist) => {
       if (state.allIds.indexOf(artist.id) === -1) { return { [artist.id]: artist }; }
@@ -15,11 +29,6 @@ const addArtists = (state, artists) => {
     })
     .filter(e => e)
     .reduce((acc, e) => ({ ...acc, ...e }), {});
-    /* console.info(JSON.stringify({
-      ...state,
-      byIds: _.merge(state.byIds, newArtists),
-      allIds: _.uniq([...state.allIds, ...Object.keys(newArtists)])
-    })) */
   return {
     ...state,
     byIds: _.merge(state.byIds, newArtists),
@@ -27,7 +36,7 @@ const addArtists = (state, artists) => {
   };
 };
 
-const artist = (state = initialState, action) => {
+const artist = (state :ArtistState = initialState, action: action): ArtistState => {
   const { type, data } = action;
   switch (type) {
     case 'ADD_ARTIST': return addArtists(state, [data]);

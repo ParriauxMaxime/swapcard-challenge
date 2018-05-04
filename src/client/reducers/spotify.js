@@ -1,3 +1,14 @@
+// @flow 
+import type { action } from '../types';
+
+export type SpotifyState = {
+  data: Object,
+  accessToken: string | null,
+  artistSearch: Array<string>,
+  albumSearch: Array<string>,  
+}
+
+
 const initialSpotifyState = {
   data: {},
   accessToken: null,
@@ -5,7 +16,7 @@ const initialSpotifyState = {
   albumSearch: [],
 };
 
-const spotify = (state = initialSpotifyState, action) => {
+const spotify = (state: SpotifyState = initialSpotifyState, action: action) => {
   const { type, data } = action;
   switch (type) {
     case 'SET_SPOTIFY_ACCESS_TOKEN': {

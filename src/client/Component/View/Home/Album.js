@@ -1,18 +1,28 @@
+// @flow
+
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import InfoIcon from 'material-ui-icons/Info';
+import type { styles } from '../../../types';
+import type { AlbumType } from '../../../reducers/album';
 
-const Album = ({
-  classes,
-  id,
-  name,
-  images,
-  artists,
-  external_urls,
-  onClick = () => null,
-}) => {
+
+type AlbumProps = {
+  onClick: () => any
+} & styles & AlbumType; 
+
+const Album = (props: AlbumProps) => {
+  const {
+    classes,
+    id,
+    name,
+    images,
+    artists,
+    external_urls,
+    onClick = () => null,
+  } = props;
   const albumExternalRedirect = () => window.open(external_urls.spotify);
   const artistString = artists.map(e => e.name).join(', ');
   const artist = artistString.length > 50 ?

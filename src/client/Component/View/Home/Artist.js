@@ -1,8 +1,14 @@
+// @flow
+
 import React from 'react';
 import { ListItemText } from 'material-ui/List';
 import { withStyles } from 'material-ui/styles';
+import type { ArtistType } from '../../../reducers/artist';
+import type { styles } from '../../../types';
 
-const Artist = (props) => {
+type ArtistProps = ArtistType & styles;
+
+const Artist = (props: ArtistProps) => {
   const {
     classes,
     id,

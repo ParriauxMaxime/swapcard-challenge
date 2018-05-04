@@ -1,13 +1,30 @@
-import _ from 'lodash';
+// @flow
 
-const initialState = {
+import _ from 'lodash';
+import type { NormalizedStore, action, image, external_urls as urls } from '../types';
+import type { ArtistType } from './artist';
+
+
+export type AlbumType = {
+    name: string,
+    id: string,
+    album_type: string,
+    external_urls: urls,
+    artists: Array<ArtistType>,
+    images: Array<image>
+};
+
+export type AlbumState = NormalizedStore<AlbumType>
+
+const initialState : AlbumState = {
   byIds: {
 
   },
   allIds: [],
 };
 
-const addAlbums = (state, albums) => {
+
+const addAlbums = (state : AlbumState, albums) => {
   const newAlbums = albums
     .map(album => ({ [album.id]: album }))
     .filter(e => e)
@@ -19,7 +36,7 @@ const addAlbums = (state, albums) => {
   };
 };
 
-const album = (state = initialState, action) => {
+const album = (state :AlbumState = initialState, action: action) => {
   const { type, data } = action;
   switch (type) {
     case 'ADD_ALBUM': return addAlbums(state, [data]);
