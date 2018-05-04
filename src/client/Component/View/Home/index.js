@@ -9,10 +9,10 @@ import AlbumSelector from './AlbumSelector';
 export const Home = ({ classes }) => (
   <React.Fragment>
     <Grid container spacing={0} className={classes.root}>
-      <Grid item xs={12} sm={4} className={classes.left}>
+      <Grid item xs={12} sm={6} md={4} className={classes.left}>
         <ArtistSelector />
       </Grid>
-      <Grid item xs={12} sm={8} className={classes.right}>
+      <Grid item xs={12} sm={6} md={8} className={classes.right}>
         <AlbumSelector />
       </Grid>
     </Grid>
@@ -27,9 +27,6 @@ const style = theme => ({
     height: '100%',
   },
   left: {
-    [theme.breakpoints.up('sm')]: {
-      minWidth: 400,
-    },
   },
   right: {
   },

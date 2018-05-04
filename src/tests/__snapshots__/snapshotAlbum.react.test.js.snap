@@ -11,27 +11,60 @@ exports[`renders correctly 1`] = `
   }
 >
   <header
-    className="MuiPaper-root-9 MuiPaper-elevation4-15 MuiAppBar-root-1 MuiAppBar-positionStatic-5 MuiAppBar-colorPrimary-7"
+    className="MuiPaper-root-12 MuiPaper-elevation4-18 MuiAppBar-root-4 MuiAppBar-positionStatic-8 MuiAppBar-colorPrimary-10"
   >
     <div
-      className="MuiToolbar-root-36 MuiToolbar-gutters-37"
+      className="MuiToolbar-root-39 MuiToolbar-gutters-40"
     >
-      <h1>
-        Spotify fetcher
-      </h1>
+      <div
+        className="MuiGrid-container-41 MuiGrid-spacing-xs-8-62"
+      >
+        <div
+          className="MuiGrid-item-42 MuiGrid-grid-xs-8-74 MuiGrid-grid-sm-10-89"
+        >
+          <h1
+            className="MuiTypography-root-131 MuiTypography-display1-135 MuiTypography-colorSecondary-152"
+          >
+            Spotify fetcher
+          </h1>
+        </div>
+        <div
+          className="MuiGrid-item-42 MuiGrid-grid-xs-4-70 MuiGrid-grid-sm-2-81 Appbar-linkGroup-2"
+        >
+          <a
+            aria-current={false}
+            className="Appbar-link-1"
+            href="/"
+            onClick={[Function]}
+            style={undefined}
+          >
+            Home
+          </a>
+             
+          <a
+            aria-current={false}
+            className="Appbar-link-1"
+            href="/about"
+            onClick={[Function]}
+            style={undefined}
+          >
+            About
+          </a>
+        </div>
+      </div>
     </div>
   </header>
   <div
-    className="MuiGrid-container-44 AlbumView-root-38"
+    className="MuiGrid-container-41 AlbumView-root-155"
   >
     <div
-      className="MuiGrid-item-45 MuiGrid-grid-xs-12-81 MuiGrid-grid-md-6-101 AlbumView-left-39"
+      className="MuiGrid-item-42 MuiGrid-grid-xs-12-78 MuiGrid-grid-sm-4-83 MuiGrid-grid-md-3-95 AlbumView-left-157"
     >
       <div
-        className="MuiPaper-root-9 MuiPaper-elevation2-13 MuiPaper-rounded-10 AlbumView-paperInfo-42"
+        className="MuiPaper-root-12 MuiPaper-elevation2-16 MuiPaper-rounded-13 AlbumView-paperInfo-160"
       >
         <button
-          className="MuiButtonBase-root-149 MuiButton-root-134 AlbumView-goBack-40"
+          className="MuiButtonBase-root-177 MuiButton-root-162 AlbumView-goBack-158"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -48,11 +81,11 @@ exports[`renders correctly 1`] = `
           type="button"
         >
           <span
-            className="MuiButton-label-135"
+            className="MuiButton-label-163"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-151"
+              className="MuiSvgIcon-root-179"
               color={undefined}
               focusable="false"
               viewBox="0 0 24 24"
@@ -63,24 +96,24 @@ exports[`renders correctly 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-157"
+            className="MuiTouchRipple-root-185"
           />
         </button>
         <img
           alt="Ipséité album"
-          className="AlbumView-albumImg-43"
+          className="AlbumView-albumImg-161"
           src="https://i.scdn.co/image/2b0545ca873f01d21841dc3f192b7317be9bf3c3"
         />
          
         <h1
-          className="MuiTypography-root-164 MuiTypography-display1-168"
+          className="MuiTypography-root-131 MuiTypography-display1-135 AlbumView-albumTitle-156"
         >
           Ipséité
         </h1>
          
         <div>
           <button
-            className="MuiButtonBase-root-149 MuiButton-root-134"
+            className="MuiButtonBase-root-177 MuiButton-root-162"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -97,49 +130,48 @@ exports[`renders correctly 1`] = `
             type="button"
           >
             <span
-              className="MuiButton-label-135"
+              className="MuiButton-label-163"
             >
               <span
-                className="MuiTypography-root-164 MuiTypography-caption-174"
+                className="MuiTypography-root-131 MuiTypography-caption-141"
               >
                 Damso
                 
               </span>
             </span>
             <span
-              className="MuiTouchRipple-root-157"
+              className="MuiTouchRipple-root-185"
             />
           </button>
         </div>
         <span
-          className="MuiTypography-root-164 MuiTypography-caption-174"
+          className="MuiTypography-root-131 MuiTypography-caption-141"
         >
-          2017 -
+          2017 - 
           14 tracks
         </span>
-         
         <span
-          className="MuiTypography-root-164 MuiTypography-caption-174"
+          className="MuiTypography-root-131 MuiTypography-caption-141"
         >
           AZ
         </span>
       </div>
     </div>
     <div
-      className="MuiGrid-item-45 MuiGrid-grid-xs-12-81 MuiGrid-grid-md-6-101 AlbumView-right-41"
+      className="MuiGrid-item-42 MuiGrid-grid-xs-12-78 MuiGrid-grid-sm-8-87 MuiGrid-grid-md-9-101 AlbumView-right-159"
     >
       <ul
-        className="MuiList-root-189 TracksList-root-188"
+        className="MuiList-root-193 TracksList-root-192"
       >
         <li
-          className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+          className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
           disabled={false}
         >
           <div
-            className="MuiListItemText-root-203"
+            className="MuiListItemText-root-207"
           >
             <h3
-              className="MuiTypography-root-164 MuiTypography-subheading-171 MuiListItemText-primary-206"
+              className="MuiTypography-root-131 MuiTypography-subheading-138 MuiListItemText-primary-210"
             >
               Disc 
               1
@@ -147,33 +179,33 @@ exports[`renders correctly 1`] = `
           </div>
         </li>
         <li
-          className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+          className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
           disabled={false}
         >
           <ul
-            className="MuiList-root-189 TracksList-root-188"
+            className="MuiList-root-193 TracksList-root-192"
           >
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h2
-                    className="MuiTypography-root-164 MuiTypography-title-170"
+                    className="MuiTypography-root-131 MuiTypography-title-137"
                   >
                     #
                   </h2>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h2
-                    className="MuiTypography-root-164 MuiTypography-title-170"
+                    className="MuiTypography-root-131 MuiTypography-title-137"
                   >
                     Name
                   </h2>
@@ -181,38 +213,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     1
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Α. Nwaar Is The New Black
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     02
                      : 
@@ -220,7 +252,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/34iEMu8pGMHsZtNqAoyVZD"
@@ -232,7 +264,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -246,38 +278,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     2
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     B. #QuedusaalVie
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     04
                      : 
@@ -285,7 +317,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/7xNP9UhpmWFFp2jFuYGM3m"
@@ -297,7 +329,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -311,38 +343,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     3
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Γ. Mosaïque solitaire
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     05
                      : 
@@ -350,7 +382,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/7wFK2ReVQpq80IAGs6eI1l"
@@ -362,7 +394,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -376,38 +408,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     4
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Δ. Dieu ne ment jamais
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -415,7 +447,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/6YWjskKykdPsBuiTBOg1VK"
@@ -427,7 +459,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -441,38 +473,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     5
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Ε. Signaler
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -480,7 +512,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/0z0izoGFPCoPJKFi41azyb"
@@ -492,7 +524,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -506,38 +538,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     6
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Ζ. Kietu
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -545,7 +577,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/05w1S3f4G9ulCktPrygay4"
@@ -557,7 +589,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -571,38 +603,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     7
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Η. Gova
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -610,7 +642,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/4LDCalloaDBsmhBk3BYP4a"
@@ -622,7 +654,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -636,38 +668,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     8
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Θ. Macarena
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -675,7 +707,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/2ewjMyCbNv2X1dB2qIDCwD"
@@ -687,7 +719,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -701,38 +733,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     9
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Ι. Peur d'être père
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -740,7 +772,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/10CJ0c1v7m9PiPVyieJ0hG"
@@ -752,7 +784,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -766,38 +798,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     10
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Κ. Kin la belle
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -805,7 +837,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/6YuSiFqJP4MUo88RtUAfAX"
@@ -817,7 +849,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -831,38 +863,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     11
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Λ. Lové
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -870,7 +902,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/0YHVHL8qSEH5BqZPd1njUz"
@@ -882,7 +914,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -896,38 +928,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     12
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Μ. Noob Saibot
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -935,7 +967,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/505Rb1eFTYTSTwFeNQI2at"
@@ -947,7 +979,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -961,38 +993,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     13
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     N. J Respect R
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -1000,7 +1032,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/539zyjwDE87Cjp1mzRN8H7"
@@ -1012,7 +1044,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -1026,38 +1058,38 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
             <li
-              className="MuiListItem-root-193 MuiListItem-default-196 MuiListItem-gutters-200"
+              className="MuiListItem-root-197 MuiListItem-default-200 MuiListItem-gutters-204"
               disabled={false}
             >
               <div
-                className="MuiGrid-container-44"
+                className="MuiGrid-container-41"
               >
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     14
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-8-77"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-8-74"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     Ξ. Une âme pour deux
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-2-71"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-2-68"
                 >
                   <h3
-                    className="MuiTypography-root-164 MuiTypography-subheading-171"
+                    className="MuiTypography-root-131 MuiTypography-subheading-138"
                   >
                     03
                      : 
@@ -1065,7 +1097,7 @@ exports[`renders correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  className="MuiGrid-item-45 MuiGrid-grid-xs-1-70"
+                  className="MuiGrid-item-42 MuiGrid-grid-xs-1-67"
                 >
                   <a
                     href="https://open.spotify.com/track/395h3MnAkHiBl1bDsoAKTd"
@@ -1077,7 +1109,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-151"
+                      className="MuiSvgIcon-root-179"
                       color={undefined}
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -1091,7 +1123,7 @@ exports[`renders correctly 1`] = `
               </div>
             </li>
             <hr
-              className="MuiDivider-root-209"
+              className="MuiDivider-root-213"
             />
           </ul>
         </li>

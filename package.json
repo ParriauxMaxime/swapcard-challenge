@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "A react-redux demonstration application",
   "main": "index.js",
+  "repository": {
+     "type" : "git", 
+     "url" : "https://github.com/ParriauxMaxime/swapcard-challenge"
+  },
   "scripts": {
     "test": "jest",
     "build": "express-react-redux build-client",
     "start": "node src/server",
     "test:watch": "npm test -- --watch",
-    "fixlint": "eslint src/client --fix"
+    "fixlint": "eslint src/client --fix",
+    "flow": "flow"
   },
   "keywords": [
     "React",

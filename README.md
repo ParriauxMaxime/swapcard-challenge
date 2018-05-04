@@ -2,6 +2,10 @@
 # swapcard-challenge
 Little demonstration of react-redux-express with SSR 
 
+# Context
+This application is part of a 1 week technical challenge for an internship interview.  
+This repository is a as of today representation of my web development knowledge. (May 2018)
+
 # Get started  
 
 1. Install dependencies

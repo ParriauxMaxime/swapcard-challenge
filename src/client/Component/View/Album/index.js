@@ -30,7 +30,7 @@ const AlbumView = ({
   const total = tracks.length;
   return (
     <Grid container spacing={0} className={classes.root}>
-      <Grid item xs={12} md={6} className={classes.left}>
+      <Grid item xs={12} sm={4} md={3} className={classes.left}>
         <Paper className={classes.paperInfo}>
           <Button
             className={classes.goBack}
@@ -44,22 +44,21 @@ const AlbumView = ({
             className={classes.albumImg}
           />
             &nbsp;
-          <Typography variant="display1">
+          <Typography variant="display1" className={classes.albumTitle}>
             { name }
           </Typography>
             &nbsp;
           <ArtistList artists={artists} onClick={artistSelect} />
           <Typography variant="caption">
-            { release_date ? `${release_date.slice(0, 4)} -` : null }
+            { release_date ? `${release_date.slice(0, 4)} - ` : null }
             { total ? `${total} track${total > 1 ? 's' : ''}` : null }
           </Typography>
-            &nbsp;
           <Typography variant="caption">
             { label }
           </Typography>
         </Paper>
       </Grid>
-      <Grid item xs={12} md={6} className={classes.right}>
+      <Grid item xs={12} sm={8} md={9} className={classes.right}>
         <TracksList />
       </Grid>
     </Grid>
@@ -71,7 +70,13 @@ const style = theme => ({
     margin: 0,
     height: '100%',
   },
+  albumTitle: {
+    textAlign: 'center',
+  },
   left: {
+    [theme.breakpoints.down('sm')]: {
+      minWidth: 300,
+    },
     [theme.breakpoints.up('sm')]: {
       maxWidth: '40%',
       flexBasis: 0,
@@ -82,30 +87,31 @@ const style = theme => ({
     marginRight: 'auto',
   },
   right: {
-    [theme.breakpoints.up('sm')]: {
-      maxWidth: '60%',
-    },
-    minWidth: '50%',
     margin: '0 auto',
-    flexBasis: '100%',
+    maxWidth: '100%',
+    flex: 1,
     overflowX: 'auto',
     maxHeight: '100%',
     padding: theme.spacing.unit,
   },
   paperInfo: {
     [theme.breakpoints.down('xs')]: {
-      maxHeight: 400,
-      paddingTop: theme.spacing.unit,
+      padding: `${theme.spacing.unit}px 0`,
+      height: 'auto',
     },
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    maxWidth: 500,
+    maxWidth: 600,
     height: '100%',
   },
   albumImg: {
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: 300,
+      maxHeight: 300,
+    },
     [theme.breakpoints.down('xs')]: {
-      minHeight: 200,
+      maxWidth: 200,
       maxHeight: 200,
     },
     padding: theme.spacing.unit,

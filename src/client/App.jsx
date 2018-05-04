@@ -14,8 +14,8 @@ import {
   artistSearch, 
   searchInputChanged
 } from './Api/action';
-import { About } from "./Component/About";
-import { Appbar } from './Component/Appbar';
+import About from "./Component/About";
+import Appbar from './Component/Appbar';
 import Spotify from './Api/spotify';
 import ConnectedHome from "./Component/View/Home";
 import ConnectedAlbumView from './Component/View/Album';
