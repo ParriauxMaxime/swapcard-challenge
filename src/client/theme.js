@@ -1,4 +1,4 @@
-const createMuiTheme = require('material-ui/styles').createMuiTheme;
+const { createMuiTheme } = require('material-ui/styles');
 const grey = require('material-ui/colors/grey').default;
 const green = require('material-ui/colors/green').default;
 

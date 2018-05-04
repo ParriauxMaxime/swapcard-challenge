@@ -1,14 +1,11 @@
 import React from 'react';
-import List, { ListItem, ListItemText, ListSubheader } from 'material-ui/List';
-import Paper from 'material-ui/Paper';
+import List, { ListItem, ListSubheader } from 'material-ui/List';
 import { withStyles } from 'material-ui/styles';
 import { connect } from 'react-redux';
 import Collapse from 'material-ui/transitions/Collapse';
-import Divider from 'material-ui/Divider';
-import Artist from './Artist';
-import { albumSearch, addAlbums, selectArtist } from '../../../Api/action';
-import Spotify from '../../../Api/spotify';
 import { push } from 'react-router-redux';
+
+import Artist from './Artist';
 import Searchbar from './Searchbar';
 
 const ArtistSelector = ({
@@ -24,9 +21,11 @@ const ArtistSelector = ({
     <div className={classes.artistList}>
       <Searchbar />
       <List
-        subheader={<ListSubheader style={{ position: 'relative' }}>
-                    Artists
-                   </ListSubheader>}
+        subheader={
+          <ListSubheader style={{ position: 'relative' }}>
+            Artists
+          </ListSubheader>
+        }
       >
         {
         artistSelected ?
@@ -79,12 +78,12 @@ const state = ({ artist, spotify, search }) => ({
   artistSelected: artist.byIds[search.artistSelected],
 });
 
-const dispatch = dispatch => ({
+const actions = dispatch => ({
   artistSelect: (artist) => {
     dispatch(push(`/?q=${artist.name}&id=${artist.id}`));
   },
 });
 
-const ConnectedArtistSelector = connect(state, dispatch)(styled);
+const ConnectedArtistSelector = connect(state, actions)(styled);
 
 export default ConnectedArtistSelector;

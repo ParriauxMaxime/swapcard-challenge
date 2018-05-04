@@ -6,7 +6,7 @@ import { MuiThemeProvider } from 'material-ui/styles';
 import { AppContainer } from 'react-hot-loader';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import { theme } from './theme';
 import App from './App';
@@ -16,7 +16,7 @@ import reducer from './reducer';
 const history = createHistory();
 const middleware = routerMiddleware(history);
 
-export const store = createStore(reducer, window.__PRELOADED_STATE__, applyMiddleware(middleware));
+const store = createStore(reducer, window.__PRELOADED_STATE__, applyMiddleware(middleware));
 
 const render = (Component) => {
   ReactDOM.hydrate(e(

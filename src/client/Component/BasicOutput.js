@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import Paper from 'material-ui/Paper';
 import withStyles from 'material-ui/styles/withStyles';
 import Button from 'material-ui/Button';
-import Spotify, { spotifyActions } from '../Api/spotify';
 
 export const BasicOutput = ({
   classes,
   search,
   data,
-  searchRequest,
+  searchRequest = () => null,
 }) => (
   <div>
     <Paper className={classes.paper}>
@@ -45,6 +44,6 @@ const state = ({ spotify, search }) => ({
 });
 
 
-export const ConnectedBasicOutput = connect(state, spotifyActions)(styled);
+export const ConnectedBasicOutput = connect(state)(styled);
 
 export default ConnectedBasicOutput;

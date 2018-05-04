@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 
@@ -41,10 +39,6 @@ const style = theme => ({
 const styled = withStyles(style)(Home);
 
 const state = ({ router }) => ({ ...router });
-
-const dispatch = dispatch => ({
-
-});
 
 const ConnectedHome = connect(state)(styled);
 

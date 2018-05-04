@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 
@@ -19,8 +17,4 @@ const ArtistList = ({ artists = [], onClick }) => (
   </div>
 );
 
-const style = theme => ({
-
-});
-
-export default withStyles(style)(ArtistList);
+export default ArtistList;

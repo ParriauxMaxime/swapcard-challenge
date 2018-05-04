@@ -1,5 +1,11 @@
+function ActionCreatorError(err = undefined) {
+  return { error: 'Action created with no type', additionalErr: err };
+}
+
 function Action(type, data = undefined) {
-  if (type === undefined || type === '') { throw 'Action created with no type'; }
+  if (type === undefined || type === '') {
+    throw ActionCreatorError();
+  }
   return {
     type,
     data,

@@ -1,9 +1,8 @@
 import React from 'react';
 import { ListItemText } from 'material-ui/List';
-import Paper from 'material-ui/Paper';
 import { withStyles } from 'material-ui/styles';
 
-export const Artist = (props) => {
+const Artist = (props) => {
   const {
     classes,
     id,
@@ -27,7 +26,7 @@ export const Artist = (props) => {
                     image ?
                       <img
                         src={image.url}
-                        alt={`${name} picture`}
+                        alt={`${name}`}
                         height="100"
                         width="100"
                       /> :

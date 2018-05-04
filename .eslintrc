@@ -3,6 +3,10 @@
    "rules": {
      "no-param-reassign": 0,
      "global-require": 0,
+     "camelcase": 1,
+     "react/prop-types": 1,
+     "no-unused-vars": 1,
+     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
      "import/no-extraneous-dependencies": [
        2,
        {

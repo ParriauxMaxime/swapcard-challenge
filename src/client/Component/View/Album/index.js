@@ -5,20 +5,10 @@ import { push } from 'react-router-redux';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Paper from 'material-ui/Paper';
-import { Link, NavLink } from 'react-router-dom';
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
-import PlayIcon from 'material-ui-icons/PlayArrow';
-import List, { ListItem, ListItemText } from 'material-ui/List';
 import GoBackIcon from 'material-ui-icons/ArrowBack';
 
-import {
-  albumSearch,
-  addAlbums,
-  selectArtist,
-  searchInputChanged,
-} from '../../../Api/action';
-import Spotify from '../../../Api/spotify';
 import ArtistList from './ArtistsList';
 import TracksList from './TracksList';
 
@@ -34,7 +24,6 @@ const AlbumView = ({
   name,
   id,
   classes,
-  history,
   artistSelect,
   selectedArtist,
 }) => {
@@ -49,7 +38,11 @@ const AlbumView = ({
           >
             <GoBackIcon />
           </Button>
-          <img src={images && images.length !== 0 ? images[0].url : ''} className={classes.albumImg} />
+          <img
+            src={images && images.length !== 0 ? images[0].url : ''}
+            alt={`${name} album`}
+            className={classes.albumImg}
+          />
             &nbsp;
           <Typography variant="display1">
             { name }
@@ -58,7 +51,11 @@ const AlbumView = ({
           <ArtistList artists={artists} onClick={artistSelect} />
           <Typography variant="caption">
             { release_date ? `${release_date.slice(0, 4)} -` : null }
-            { total ? `${total} track${total > 1 ? 's' : ''}` :  null }
+            { total ? `${total} track${total > 1 ? 's' : ''}` : null }
+          </Typography>
+            &nbsp;
+          <Typography variant="caption">
+            { label }
           </Typography>
         </Paper>
       </Grid>
@@ -82,7 +79,7 @@ const style = theme => ({
   },
   goBack: {
     position: 'relative',
-    marginRight: 'auto'
+    marginRight: 'auto',
   },
   right: {
     [theme.breakpoints.up('sm')]: {
@@ -100,8 +97,6 @@ const style = theme => ({
       maxHeight: 400,
       paddingTop: theme.spacing.unit,
     },
-    display: 'flex',
-    flexDirection: 'column',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -124,20 +119,20 @@ const styled = withStyles(style)(AlbumView);
 const state = ({
   track, search, album, artist, router,
 }) => {
-  const selectedAlbum = album.byIds[search.albumSelected] 
+  const selectedAlbum = album.byIds[search.albumSelected];
   return {
     ...selectedAlbum,
     tracks: selectedAlbum &&
             selectedAlbum.tracks &&
             selectedAlbum.tracks.items ?
-              selectedAlbum.tracks.items.map(e => track.byIds[e.id]) :
-              [],
+      selectedAlbum.tracks.items.map(e => track.byIds[e.id]) :
+      [],
     selectedArtist: artist.byIds[search.artistSelected],
     router,
   };
-}
+};
 
-const dispatch = dispatch => ({
+const actions = dispatch => ({
   artistSelect: (artist) => {
     if (!artist) {
       dispatch(push('/'));
@@ -147,6 +142,6 @@ const dispatch = dispatch => ({
   },
 });
 
-export const ConnectedAlbumView = connect(state, dispatch)(styled);
+export const ConnectedAlbumView = connect(state, actions)(styled);
 
 export default ConnectedAlbumView;

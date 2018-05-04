@@ -9,3 +9,5 @@ export const About = () => (
     <p>This is a tiny TODO app example</p>
   </div>
 );
+
+export default About;

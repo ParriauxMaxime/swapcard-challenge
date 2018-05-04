@@ -4,12 +4,9 @@ import { push } from 'react-router-redux';
 import { NavLink } from 'react-router-dom';
 
 import List, { ListItem, ListItemText, ListSubheader } from 'material-ui/List';
-import Paper from 'material-ui/Paper';
 import { withStyles } from 'material-ui/styles';
-import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
-import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
-import Subheader from 'material-ui/List/ListSubheader';
+import GridList from 'material-ui/GridList';
 
 import Artist from './Artist';
 import Album from './Album';
@@ -31,18 +28,20 @@ const AlbumSelector = ({
     type: typeName[type],
     albums: albums.filter(e => e && e.album_type === type),
   });
-  const album = filterByType('album');
+  const albumType = filterByType('album');
   const singles = filterByType('single');
   const compilation = filterByType('compilation');
-  const lists = [album, singles, compilation];
+  const lists = [albumType, singles, compilation];
   return (
     <React.Fragment>
-      <List className={classes.list}
-            subheader={
-              <ListSubheader style={{ position: 'relative' }}>
+      <List
+        className={classes.list}
+        subheader={
+          <ListSubheader style={{ position: 'relative' }}>
                 Albums
-              </ListSubheader>
-            }>
+          </ListSubheader>
+            }
+      >
         {
             lists.map(list => (
                 list.albums.length > 0 ?
@@ -89,11 +88,11 @@ const style = theme => ({
 
 const styled = withStyles(style)(AlbumSelector);
 
-const state = ({ album, spotify, router }) => ({
+const state = ({ album, spotify }) => ({
   albums: spotify.albumSearch.map(id => album.byIds[id]),
 });
 
-const dispatch = (dispatch, ownProps) => ({
+const actions = dispatch => ({
   albumRedirect: (album) => {
     dispatch(selectAlbum(album.id));
     Spotify.getAlbumTracks(album.id)
@@ -104,6 +103,6 @@ const dispatch = (dispatch, ownProps) => ({
   },
 });
 
-const ConnectedArtistSelector = connect(state, dispatch)(styled);
+const ConnectedArtistSelector = connect(state, actions)(styled);
 
 export default ConnectedArtistSelector;

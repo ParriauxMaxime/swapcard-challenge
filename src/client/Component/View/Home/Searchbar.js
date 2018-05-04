@@ -9,7 +9,7 @@ import Spotify from '../../../Api/spotify';
 import { searchInputChanged, addArtists, artistSearch } from '../../../Api/action';
 
 
-export const Searchbar = ({
+const Searchbar = ({
   classes,
   input = '',
   artistSelected = null,

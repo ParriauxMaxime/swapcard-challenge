@@ -15,11 +15,11 @@ const addArtists = (state, artists) => {
     })
     .filter(e => e)
     .reduce((acc, e) => ({ ...acc, ...e }), {});
-    /*console.info(JSON.stringify({
+    /* console.info(JSON.stringify({
       ...state,
       byIds: _.merge(state.byIds, newArtists),
-      allIds: _.uniq([...state.allIds, ...Object.keys(newArtists)])      
-    }))*/
+      allIds: _.uniq([...state.allIds, ...Object.keys(newArtists)])
+    })) */
   return {
     ...state,
     byIds: _.merge(state.byIds, newArtists),
@@ -36,6 +36,6 @@ const artist = (state = initialState, action) => {
   }
 };
 
-module.exports = { 
-  default: artist
-}
+module.exports = {
+  default: artist,
+};

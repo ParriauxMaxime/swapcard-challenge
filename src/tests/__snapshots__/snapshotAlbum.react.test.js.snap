@@ -67,6 +67,7 @@ exports[`renders correctly 1`] = `
           />
         </button>
         <img
+          alt="Ipséité album"
           className="AlbumView-albumImg-43"
           src="https://i.scdn.co/image/2b0545ca873f01d21841dc3f192b7317be9bf3c3"
         />
@@ -115,6 +116,12 @@ exports[`renders correctly 1`] = `
         >
           2017 -
           14 tracks
+        </span>
+         
+        <span
+          className="MuiTypography-root-164 MuiTypography-caption-174"
+        >
+          AZ
         </span>
       </div>
     </div>
