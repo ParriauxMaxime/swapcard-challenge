@@ -1,4 +1,4 @@
-{ 
+{
     "artists": [{
         "external_urls": {
             "spotify": "https://open.spotify.com/artist/2DaxqgrOhkeH0fpeiQq2f4"
@@ -223,5 +223,437 @@
         "popularity": 37,
         "type": "artist",
         "uri": "spotify:artist:1isjL7whJKI0FmlHg73tH8"
-    }]
+    }],
+    "album": {
+        "album_type": "album",
+        "artists": [{
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+            },
+            "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+            "id": "2UwqpfQtNuhBwviIC0f2ie",
+            "name": "Damso",
+            "type": "artist",
+            "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+        }],
+        "available_markets": ["CA", "MX", "US"],
+        "copyrights": [{
+            "text": "© 2017 92I / Capitol Music France",
+            "type": "C"
+        }, {
+            "text": "℗ 2017 92I / Capitol Music France",
+            "type": "P"
+        }],
+        "external_ids": {
+            "upc": "00602557576634"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/album/7ovdjtmV0Bkm4Xb4pqtrZt"
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/albums/7ovdjtmV0Bkm4Xb4pqtrZt",
+        "id": "7ovdjtmV0Bkm4Xb4pqtrZt",
+        "images": [{
+            "height": 640,
+            "url": "https://i.scdn.co/image/2b0545ca873f01d21841dc3f192b7317be9bf3c3",
+            "width": 640
+        }, {
+            "height": 300,
+            "url": "https://i.scdn.co/image/305adfa93454391efb57823bddac2e269b57d2a1",
+            "width": 300
+        }, {
+            "height": 64,
+            "url": "https://i.scdn.co/image/f2443b717e9b533014bf174c0652dc0972111588",
+            "width": 64
+        }],
+        "label": "AZ",
+        "name": "Ipséité",
+        "popularity": 54,
+        "release_date": "2017-04-28",
+        "release_date_precision": "day",
+        "tracks": {
+            "href": "https://api.spotify.com/v1/albums/7ovdjtmV0Bkm4Xb4pqtrZt/tracks?offset=0&limit=50",
+            "items": [{
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 123546,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/34iEMu8pGMHsZtNqAoyVZD"
+                },
+                "href": "https://api.spotify.com/v1/tracks/34iEMu8pGMHsZtNqAoyVZD",
+                "id": "34iEMu8pGMHsZtNqAoyVZD",
+                "is_local": false,
+                "name": "Α. Nwaar Is The New Black",
+                "preview_url": null,
+                "track_number": 1,
+                "type": "track",
+                "uri": "spotify:track:34iEMu8pGMHsZtNqAoyVZD"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 244573,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/7xNP9UhpmWFFp2jFuYGM3m"
+                },
+                "href": "https://api.spotify.com/v1/tracks/7xNP9UhpmWFFp2jFuYGM3m",
+                "id": "7xNP9UhpmWFFp2jFuYGM3m",
+                "is_local": false,
+                "name": "B. #QuedusaalVie",
+                "preview_url": null,
+                "track_number": 2,
+                "type": "track",
+                "uri": "spotify:track:7xNP9UhpmWFFp2jFuYGM3m"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 305506,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/7wFK2ReVQpq80IAGs6eI1l"
+                },
+                "href": "https://api.spotify.com/v1/tracks/7wFK2ReVQpq80IAGs6eI1l",
+                "id": "7wFK2ReVQpq80IAGs6eI1l",
+                "is_local": false,
+                "name": "Γ. Mosaïque solitaire",
+                "preview_url": null,
+                "track_number": 3,
+                "type": "track",
+                "uri": "spotify:track:7wFK2ReVQpq80IAGs6eI1l"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 199346,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/6YWjskKykdPsBuiTBOg1VK"
+                },
+                "href": "https://api.spotify.com/v1/tracks/6YWjskKykdPsBuiTBOg1VK",
+                "id": "6YWjskKykdPsBuiTBOg1VK",
+                "is_local": false,
+                "name": "Δ. Dieu ne ment jamais",
+                "preview_url": null,
+                "track_number": 4,
+                "type": "track",
+                "uri": "spotify:track:6YWjskKykdPsBuiTBOg1VK"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 201893,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/0z0izoGFPCoPJKFi41azyb"
+                },
+                "href": "https://api.spotify.com/v1/tracks/0z0izoGFPCoPJKFi41azyb",
+                "id": "0z0izoGFPCoPJKFi41azyb",
+                "is_local": false,
+                "name": "Ε. Signaler",
+                "preview_url": null,
+                "track_number": 5,
+                "type": "track",
+                "uri": "spotify:track:0z0izoGFPCoPJKFi41azyb"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 232200,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/05w1S3f4G9ulCktPrygay4"
+                },
+                "href": "https://api.spotify.com/v1/tracks/05w1S3f4G9ulCktPrygay4",
+                "id": "05w1S3f4G9ulCktPrygay4",
+                "is_local": false,
+                "name": "Ζ. Kietu",
+                "preview_url": null,
+                "track_number": 6,
+                "type": "track",
+                "uri": "spotify:track:05w1S3f4G9ulCktPrygay4"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 197240,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/4LDCalloaDBsmhBk3BYP4a"
+                },
+                "href": "https://api.spotify.com/v1/tracks/4LDCalloaDBsmhBk3BYP4a",
+                "id": "4LDCalloaDBsmhBk3BYP4a",
+                "is_local": false,
+                "name": "Η. Gova",
+                "preview_url": null,
+                "track_number": 7,
+                "type": "track",
+                "uri": "spotify:track:4LDCalloaDBsmhBk3BYP4a"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 206840,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/2ewjMyCbNv2X1dB2qIDCwD"
+                },
+                "href": "https://api.spotify.com/v1/tracks/2ewjMyCbNv2X1dB2qIDCwD",
+                "id": "2ewjMyCbNv2X1dB2qIDCwD",
+                "is_local": false,
+                "name": "Θ. Macarena",
+                "preview_url": null,
+                "track_number": 8,
+                "type": "track",
+                "uri": "spotify:track:2ewjMyCbNv2X1dB2qIDCwD"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }, {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/31V9AwOdKY1QlfAcr11qvy"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/31V9AwOdKY1QlfAcr11qvy",
+                    "id": "31V9AwOdKY1QlfAcr11qvy",
+                    "name": "Youri",
+                    "type": "artist",
+                    "uri": "spotify:artist:31V9AwOdKY1QlfAcr11qvy"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 204906,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/10CJ0c1v7m9PiPVyieJ0hG"
+                },
+                "href": "https://api.spotify.com/v1/tracks/10CJ0c1v7m9PiPVyieJ0hG",
+                "id": "10CJ0c1v7m9PiPVyieJ0hG",
+                "is_local": false,
+                "name": "Ι. Peur d'être père",
+                "preview_url": null,
+                "track_number": 9,
+                "type": "track",
+                "uri": "spotify:track:10CJ0c1v7m9PiPVyieJ0hG"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 200866,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/6YuSiFqJP4MUo88RtUAfAX"
+                },
+                "href": "https://api.spotify.com/v1/tracks/6YuSiFqJP4MUo88RtUAfAX",
+                "id": "6YuSiFqJP4MUo88RtUAfAX",
+                "is_local": false,
+                "name": "Κ. Kin la belle",
+                "preview_url": null,
+                "track_number": 10,
+                "type": "track",
+                "uri": "spotify:track:6YuSiFqJP4MUo88RtUAfAX"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 209560,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/0YHVHL8qSEH5BqZPd1njUz"
+                },
+                "href": "https://api.spotify.com/v1/tracks/0YHVHL8qSEH5BqZPd1njUz",
+                "id": "0YHVHL8qSEH5BqZPd1njUz",
+                "is_local": false,
+                "name": "Λ. Lové",
+                "preview_url": null,
+                "track_number": 11,
+                "type": "track",
+                "uri": "spotify:track:0YHVHL8qSEH5BqZPd1njUz"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 202186,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/505Rb1eFTYTSTwFeNQI2at"
+                },
+                "href": "https://api.spotify.com/v1/tracks/505Rb1eFTYTSTwFeNQI2at",
+                "id": "505Rb1eFTYTSTwFeNQI2at",
+                "is_local": false,
+                "name": "Μ. Noob Saibot",
+                "preview_url": null,
+                "track_number": 12,
+                "type": "track",
+                "uri": "spotify:track:505Rb1eFTYTSTwFeNQI2at"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 217320,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/539zyjwDE87Cjp1mzRN8H7"
+                },
+                "href": "https://api.spotify.com/v1/tracks/539zyjwDE87Cjp1mzRN8H7",
+                "id": "539zyjwDE87Cjp1mzRN8H7",
+                "is_local": false,
+                "name": "N. J Respect R",
+                "preview_url": null,
+                "track_number": 13,
+                "type": "track",
+                "uri": "spotify:track:539zyjwDE87Cjp1mzRN8H7"
+            }, {
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2UwqpfQtNuhBwviIC0f2ie"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+                    "id": "2UwqpfQtNuhBwviIC0f2ie",
+                    "name": "Damso",
+                    "type": "artist",
+                    "uri": "spotify:artist:2UwqpfQtNuhBwviIC0f2ie"
+                }],
+                "available_markets": ["CA", "MX", "US"],
+                "disc_number": 1,
+                "duration_ms": 239653,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/395h3MnAkHiBl1bDsoAKTd"
+                },
+                "href": "https://api.spotify.com/v1/tracks/395h3MnAkHiBl1bDsoAKTd",
+                "id": "395h3MnAkHiBl1bDsoAKTd",
+                "is_local": false,
+                "name": "Ξ. Une âme pour deux",
+                "preview_url": null,
+                "track_number": 14,
+                "type": "track",
+                "uri": "spotify:track:395h3MnAkHiBl1bDsoAKTd"
+            }],
+            "limit": 50,
+            "next": null,
+            "offset": 0,
+            "previous": null,
+            "total": 14
+        },
+        "type": "album",
+        "uri": "spotify:album:7ovdjtmV0Bkm4Xb4pqtrZt"
+    }
 }

@@ -32,21 +32,14 @@ const App = (props) => {
         <Route path="/about" component={About} />
         <Route path="/home" component={ConnectedHome} />
         <Route path="/album/:id" component={ConnectedAlbumView} />
-        <Route path="/" component={ConnectedHome} />
+        <Route exact path="/" component={ConnectedHome} />
         <Route render={() => <Redirect to="/" />} />
       </Switch>
     </div>
   )
 };
 
-const appState = ({ search, album, artist, track, spotify, router }) => ({
-  spotify,
-  album,
-  artist,
-  track,
-  search,
-  router,
-})
+const appState = (store) => ({ ...store })
 
 const dispatch = (dispatch) => ({
   initRequest: (search) => {
@@ -96,11 +89,14 @@ const dispatch = (dispatch) => ({
 
 class Main extends React.Component {
   // Remove the server-side injected CSS.
-  static stayHydrated = (props, prevProps = {}) => {
+  stayHydrated(props, prevProps = {}) {
     if (props.spotify.accessToken) {
       Spotify.setAccessToken(props.spotify.accessToken)
     }
-    if (props.router.location.search.length) {
+    if (props.router &&
+        props.router.location &&
+        props.router.location.search &&
+        props.router.location.search.length) {
       const {id, q} = props.router.location.search
                     .slice(1)
                     .split('&')
@@ -126,13 +122,14 @@ class Main extends React.Component {
     if (jssStyles && jssStyles.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
-    Main.stayHydrated(this.props);
+    this.stayHydrated(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.router.location.pathname !== this.props.router.location.pathname ||
+    if (nextProps.router && nextProps.router.location &&
+      nextProps.router.location.pathname !== this.props.router.location.pathname ||
       nextProps.router.location.search !== this.props.router.location.search)
-      Main.stayHydrated(nextProps); 
+      this.stayHydrated(nextProps, this.props); 
   }
 
   render() {

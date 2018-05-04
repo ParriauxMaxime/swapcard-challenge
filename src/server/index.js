@@ -1,10 +1,11 @@
-
 const express = require('express');
 const app = express();
 const SSR = require('./middleware/SSR');
 const https = require('https');
+const path = require('path');
 const SpotifyApi = require('spotify-web-api-node');
 require('dotenv').config()
+
 const { 
     addArtists, 
     addAlbums,
@@ -25,10 +26,12 @@ const spotify = new SpotifyApi({
 let expireAt = 0;
 
 function authenticate(store, req, cb) {
+    const search = req.query.q;
+    const id = req.query.id;
+
     function onArtistSearch() {
         let promises = [];
-        if (req.query.q) {
-            const search = req.query.q;
+        if (search) {
             store.dispatch(searchInputChanged(search))
             promises.push(spotify.searchArtists(search, {limit: 8})
                 .then((res) => res.body.artists.items)
@@ -38,7 +41,6 @@ function authenticate(store, req, cb) {
                 }));
         }
         if (req.query.id) {
-            const id = req.query.id
             store.dispatch(selectArtist(id))
             promises.push(
                 spotify.getArtistAlbums(id)
@@ -90,7 +92,7 @@ function authenticate(store, req, cb) {
             .then(onAlbumSearch)
             .then(onArtistSearch)
             .then(cb)
-            .catch(err => console.error(err))
+            .catch(err => cb(err))
     }
     else {
         const accessToken = spotify.getAccessToken();
@@ -102,13 +104,17 @@ function authenticate(store, req, cb) {
     }
 }
 
+app.use('/public', express.static(path.join(__dirname, '../../public')));
 
 app.use(SSR({
     beforeSSR: authenticate
 }), (err, req, res, next) => {
     if(err) {
+        const params = req.url.split('/').slice(1);
+        if (params.length > 1 && params[0] === "album")
         console.log("error");
         console.info(err);
+        res.status(404).send(`album with id: ${params[1]} not found.`)
     }
 });
 

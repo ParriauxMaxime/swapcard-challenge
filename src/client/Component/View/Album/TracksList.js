@@ -47,31 +47,32 @@ const style = theme => ({
 const styled = withStyles(style)(TracksList);
 
 const state = ({ track, album, search }) => {
-  const sortedByTrackNumber = () => {
-    const tab = album.byIds[search.albumSelected] &&
-        album.byIds[search.albumSelected].tracks &&
-        album.byIds[search.albumSelected].tracks.items ?
-      album.byIds[search.albumSelected].tracks.items.map(t => track.byIds[t.id]) :
-      [];
-    return tab;
-  };
+  const selectedAlbum = album.byIds[search.albumSelected]
+  const getTracks = () => (
+    selectedAlbum &&
+    selectedAlbum.tracks &&
+    selectedAlbum.tracks.items ?
+      selectedAlbum.tracks.items.map(t => track.byIds[t.id]) :
+      []
+  );
+  const reduceTracksInDisk = (acc, e) => (
+    acc.length < (e.disc_number) ? 
+      [...acc, [e]] : 
+      [
+        ...acc.slice(0, e.disc_number - 1),
+        [...acc[e.disc_number - 1], e], 
+        ...acc.slice(e.disc_number, acc.length), 
+      ]
+  ); 
   return ({
-    tracks: sortedByTrackNumber(),
-    album: album.byIds[search.albumSelected],
+    tracks: getTracks(),
+    album: selectedAlbum,
     disks: {
-      number: _.uniq(album.byIds[search.albumSelected].tracks.items
-                  .map(t => t.disc_number)).length,
-      tracks: album.byIds[search.albumSelected].tracks.items.reduce(
-        (acc, e) => {
-          const index = e.disc_number;
-          return acc.length < (index) ? 
-            [...acc, [e]] : 
-            [
-              ...acc.slice(0, index - 1),
-              [...acc[index - 1], e], 
-              ...acc.slice(index, acc.length), 
-            ]
-        }, [])
+      tracks: selectedAlbum && 
+              selectedAlbum.tracks &&
+              selectedAlbum.tracks.items ?
+                selectedAlbum.tracks.items.reduce(reduceTracksInDisk, []) :
+                []
     }
   });
 };

@@ -23,12 +23,15 @@ module.exports = baseConfig.map(config => merge.smartStrategy({
         loader: 'babel-loader',
         options: {
           presets: [
-            ['@babel/env', { modules: false }],
-            '@babel/react',
-            '@babel/stage-3',
+            ['env', { modules: false }],
+            'react',
+            'stage-3'
           ],
           compact: true,
-          plugins: ['react-hot-loader/babel'],
+          plugins: [
+            'react-hot-loader/babel',
+            "transform-class-properties",
+          ],
         },
       }],
     }],

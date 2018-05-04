@@ -3,6 +3,13 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // TODO make it more readable
+const presets = [
+    [ 'env', { modules: false }],
+    'react',
+    'stage-3'
+];
+
+const plugins = [ 'transform-class-properties' ]
 
 module.exports = [{
   name: 'client',
@@ -29,11 +36,8 @@ module.exports = [{
       use: [{
         loader: 'babel-loader',
         options: {
-          presets: [
-            ['@babel/env', { modules: false }],
-            '@babel/react',
-            '@babel/stage-3',
-          ],
+          presets,
+          plugins,
           compact: true,
         },
       }],
@@ -41,11 +45,13 @@ module.exports = [{
       test: /\.(png|gif|jpg|svg)$/,
       use: [{
         loader: 'file-loader',
-        options: { name: '[hash]-[name].[ext]' },
+        options: {
+          name: '[hash]-[name].[ext]'
+        },
       }],
     }, {
       test: /\.css$/,
-      use: ['style-loader','css-loader'],
+      use: ['style-loader', 'css-loader'],
     }],
   },
   resolve: {
@@ -74,11 +80,8 @@ module.exports = [{
       use: [{
         loader: 'babel-loader',
         options: {
-          presets: [
-            ['@babel/env', { modules: false }],
-            '@babel/react',
-            '@babel/stage-3',
-          ],
+          presets,
+          plugins,          
           compact: true,
         },
       }],
@@ -107,11 +110,7 @@ module.exports = [{
       use: [{
         loader: 'babel-loader',
         options: {
-          presets: [
-            ['@babel/env', { modules: false }],
-            '@babel/react',
-            '@babel/stage-3',
-          ],
+          presets,
           compact: true,
         },
       }],

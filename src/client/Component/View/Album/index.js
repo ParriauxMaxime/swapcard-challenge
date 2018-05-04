@@ -49,7 +49,7 @@ const AlbumView = ({
           >
             <GoBackIcon />
           </Button>
-          <img src={images.length !== 0 ? images[0].url : ''} className={classes.albumImg} />
+          <img src={images && images.length !== 0 ? images[0].url : ''} className={classes.albumImg} />
             &nbsp;
           <Typography variant="display1">
             { name }
@@ -57,8 +57,8 @@ const AlbumView = ({
             &nbsp;
           <ArtistList artists={artists} onClick={artistSelect} />
           <Typography variant="caption">
-            { `${release_date.slice(0, 4)} -`}
-            { `${total} track${total > 1 ? 's' : ''}` }
+            { release_date ? `${release_date.slice(0, 4)} -` : null }
+            { total ? `${total} track${total > 1 ? 's' : ''}` :  null }
           </Typography>
         </Paper>
       </Grid>
@@ -123,16 +123,19 @@ const styled = withStyles(style)(AlbumView);
 
 const state = ({
   track, search, album, artist, router,
-}) => ({
-  ...album.byIds[search.albumSelected],
-  tracks: album.byIds[search.albumSelected] &&
-                album.byIds[search.albumSelected].tracks &&
-                album.byIds[search.albumSelected].tracks.items ?
-    album.byIds[search.albumSelected].tracks.items.map(e => track.byIds[e.id]) :
-    [],
-  selectedArtist: artist.byIds[search.artistSelected],
-  router,
-});
+}) => {
+  const selectedAlbum = album.byIds[search.albumSelected] 
+  return {
+    ...selectedAlbum,
+    tracks: selectedAlbum &&
+            selectedAlbum.tracks &&
+            selectedAlbum.tracks.items ?
+              selectedAlbum.tracks.items.map(e => track.byIds[e.id]) :
+              [],
+    selectedArtist: artist.byIds[search.artistSelected],
+    router,
+  };
+}
 
 const dispatch = dispatch => ({
   artistSelect: (artist) => {

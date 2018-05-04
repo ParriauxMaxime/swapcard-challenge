@@ -4,10 +4,9 @@
   "description": "A react-redux demonstration application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "express-react-redux build-client",
     "start": "node src/server",
-    "test": "jest",
     "test:watch": "npm test -- --watch",
     "fixlint": "eslint src/client --fix"
   },
@@ -37,6 +36,15 @@
     "spotify-web-api-node": "^3.1.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-jest": "^22.4.3",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "eslint": "^4.11.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -46,6 +54,7 @@
     "flow": "^0.2.3",
     "jest": "^22.4.3",
     "npm": "^6.0.0",
-    "react-hot-loader": "3.0.0-beta.7"
+    "react-hot-loader": "3.0.0-beta.7",
+    "react-test-renderer": "^16.3.2"
   }
 }
